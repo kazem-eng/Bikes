@@ -15,7 +15,7 @@ class SplashScreen extends BaseView<SplashScreenViewModel> {
     final _logoWidth = _screenSize.width * .3;
 
     return BlocBuilder<SplashScreenViewModel, SplashScreenState>(
-      bloc: viewModel,
+      bloc: viewModel..navigateToLogin(),
       builder: (_, state) {
         return Scaffold(
           body: Center(

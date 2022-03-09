@@ -4,10 +4,11 @@ import 'package:injectable/injectable.dart';
 
 import 'package:bike_catalog/services/navigation/navigation.dart';
 import 'package:bike_catalog/setup.config.dart';
+import 'package:bike_catalog/theme/theme.dart';
 
 final getIt = GetIt.instance;
 
-dynamic configureDependencies() async => $initGetIt(getIt);
+void configureDependencies() => $initGetIt(getIt);
 
 T locateService<T extends Object>() => getIt.get<T>();
 
@@ -29,4 +30,7 @@ abstract class RegisterModule {
 
   @singleton
   AppRouter get appRouter => _appRouter;
+
+  @singleton
+  IAppThemeData get theme => DefaultTheme();
 }
