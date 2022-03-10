@@ -1,0 +1,16 @@
+[
+    {
+        "name": "K-Bike-640",
+        "description": "this is description",
+        "category": "E-bike",
+        "price": 125.5,
+        "thubmnail": "thubmnail.jpg",
+        "images": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ],
+        "size": 22,
+        "color": "red"
+    }
+]

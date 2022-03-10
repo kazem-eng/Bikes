@@ -13,7 +13,8 @@ abstract class INavigationService<T> {
 }
 
 class NavigationService extends INavigationService<Object> {
-  NavigationService(this._navigatorKey);
+  NavigationService({required GlobalKey<NavigatorState> navigatorKey})
+      : _navigatorKey = navigatorKey;
 
   final GlobalKey<NavigatorState> _navigatorKey;
 

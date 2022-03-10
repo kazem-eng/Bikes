@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:http/http.dart';
 import 'package:injectable/injectable.dart';
 
 import 'package:bike_catalog/services/navigation/navigation.dart';
 import 'package:bike_catalog/setup.config.dart';
 import 'package:bike_catalog/theme/theme.dart';
+
+import 'package:bike_catalog/services/network/network.dart';
 
 final getIt = GetIt.instance;
 
@@ -20,7 +23,11 @@ T locateService<T extends Object>() => getIt.get<T>();
 @module
 abstract class RegisterModule {
   static final _appRouter = AppRouter();
-  final _navigationService = NavigationService(_appRouter.navigatorKey);
+  final _defauldTheme = DefaultTheme();
+  final _client = Client();
+
+  final _navigationService =
+      NavigationService(navigatorKey: _appRouter.navigatorKey);
 
   @Injectable(as: Key)
   UniqueKey get key;
@@ -32,5 +39,8 @@ abstract class RegisterModule {
   AppRouter get appRouter => _appRouter;
 
   @singleton
-  IAppThemeData get theme => DefaultTheme();
+  IAppThemeData get theme => _defauldTheme;
+
+  @singleton
+  INetworkService get network => NetworkCall(client: _client);
 }
