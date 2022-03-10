@@ -5,7 +5,7 @@ part 'colors.dart';
 part 'typographies.dart';
 
 class DefaultTheme extends IAppThemeData {
-  static const _defaultBorderRadius = 8.0;
+  static const _defaultBorderRadius = 10.0;
 
   @override
   ITypographies get typographies => const _Typographies();

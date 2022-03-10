@@ -7,41 +7,59 @@ class CardItem extends StatelessWidget {
   const CardItem({
     required String title,
     required String subtitle,
-    Color? bgColor,
+    Function()? onTap,
+    String? imageURL,
     Key? key,
   })  : _title = title,
         _subtitle = subtitle,
-        _bgColor = bgColor,
+        _onTap = onTap,
+        _imageURL = imageURL,
         super(key: key);
 
   final String _title;
   final String _subtitle;
-  final Color? _bgColor;
+  final String? _imageURL;
+  final Function()? _onTap;
 
   static const _cardMargin = 10.0;
-  static const _cardPadding = 5.0;
-  static const _cardElevation = 2.0;
+  static const _cardHeight = 320.0;
+  static const _footerHeight = 60.0;
 
   @override
   Widget build(BuildContext context) {
     final appTheme = AppTheme.of(context).theme;
-    return Card(
-      elevation: _cardElevation,
-      margin: const EdgeInsets.all(_cardMargin),
-      color: _bgColor,
-      child: ListTile(
-        contentPadding: const EdgeInsets.all(_cardPadding),
-        horizontalTitleGap: _cardPadding,
-        leading: const CircleAvatar(),
-        title: Label(
-          _title,
-          typography: TypographyStyle.headline1,
-        ),
-        subtitle: Padding(
-          padding: const EdgeInsets.symmetric(vertical: _cardPadding),
-          child: Label(
-            _subtitle,
-            color: appTheme.colors.subtitleText,
+    return InkWell(
+      onTap: _onTap,
+      child: SizedBox(
+        height: _cardHeight,
+        child: Container(
+          margin: const EdgeInsets.all(_cardMargin),
+          decoration: appTheme.cardDecoration,
+          child: ClipRRect(
+            borderRadius: appTheme.defaultBorderRadius,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Image.network(
+                  _imageURL ?? 'https://picsum.photos/id/237/500/300',
+                  fit: BoxFit.cover,
+                ),
+                Expanded(
+                  child: Container(
+                    height: _footerHeight,
+                    padding: const EdgeInsets.only(bottom: _cardMargin),
+                    child: ListTile(
+                        title: Label(
+                          _title,
+                        ),
+                        subtitle: Label(
+                          _subtitle,
+                        ),
+                        trailing: const Icon(Icons.keyboard_arrow_right)),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

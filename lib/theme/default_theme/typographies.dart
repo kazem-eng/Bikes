@@ -23,10 +23,11 @@ class _RobotoTypography extends ITypography {
   const _RobotoTypography();
 
   static const String robotoFontFamily = 'Roboto';
-  static const _h1HeadlineSize = 10.0;
+  static const _h1HeadlineSize = 22.0;
   static const _body1 = 16.0;
 
   static const _defaultTextColor = _IColors.black;
+  static const _secondaryTextColor = _IColors.white;
   static const _body1LetterSpacing = 0.27;
 
   TextStyle get _baseTextStyle => const TextStyle(
@@ -40,6 +41,7 @@ class _RobotoTypography extends ITypography {
   TextStyle get headline1 => _baseTextStyle.copyWith(
         fontWeight: FontWeight.w700,
         fontSize: _h1HeadlineSize,
+        color: _secondaryTextColor,
       );
 
   @override

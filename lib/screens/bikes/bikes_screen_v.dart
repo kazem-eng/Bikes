@@ -38,18 +38,16 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
   Widget _buildProjectList({
     required IAppThemeData appTheme,
     required BikesScreenState state,
-  }) =>
-      ListView.builder(
-        itemCount: (state as Loaded).bikes.length,
-        itemBuilder: (context, index) {
-          final bike = state.bikes[index];
-          return InkWell(
-            onTap: () {},
-            child: ui_kit.CardItem(
-              title: bike.name,
-              subtitle: bike.description,
-            ),
-          );
-        },
-      );
+  }) {
+    return ListView.builder(
+      itemCount: (state as Loaded).bikes.length,
+      itemBuilder: (context, index) {
+        final bike = state.bikes[index];
+        return ui_kit.CardItem(
+          title: bike.name,
+          subtitle: bike.description,
+        );
+      },
+    );
+  }
 }
