@@ -41,7 +41,7 @@ class CardItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Image.network(
-                  _imageURL ?? 'https://picsum.photos/id/237/500/300',
+                  _imageURL ?? 'https://picsum.photos/id/237/300/200',
                   fit: BoxFit.cover,
                 ),
                 Expanded(

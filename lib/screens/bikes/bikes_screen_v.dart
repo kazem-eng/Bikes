@@ -46,6 +46,9 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
         return ui_kit.CardItem(
           title: bike.name,
           subtitle: bike.description,
+          onTap: () {
+            viewModel.onBikeSelection(selectedBike: bike);
+          },
         );
       },
     );

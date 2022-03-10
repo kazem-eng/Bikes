@@ -1,7 +1,8 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:bike_catalog/screens/bikes/bikes_screen_v.dart';
 
+import 'package:bike_catalog/screens/bikes/bikes_screen_v.dart';
+import 'package:bike_catalog/screens/details/details_screen_v.dart';
 import 'package:bike_catalog/screens/splash/splash_screen_v.dart';
 
 export 'router.gr.dart';
@@ -9,6 +10,7 @@ export 'router.gr.dart';
 abstract class Routes {
   static const splash = '/splash';
   static const bikes = '/bikes';
+  static const bikeDetails = '/bike_details';
 }
 
 @MaterialAutoRouter(
@@ -22,6 +24,10 @@ abstract class Routes {
     AutoRoute(
       page: BikesScreen,
       path: Routes.bikes,
+    ),
+    AutoRoute(
+      page: DetailsScreen,
+      path: Routes.bikeDetails,
     ),
     RedirectRoute(path: '*', redirectTo: '/')
   ],

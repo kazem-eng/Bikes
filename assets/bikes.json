@@ -1,5 +1,6 @@
 [
     {
+        "id": "12345",
         "name": "K-Bike-640",
         "description": "this is description",
         "category": "E-bike",
@@ -11,6 +12,7 @@
             "3.jpg"
         ],
         "size": 22,
-        "color": "red"
+        "color": "red",
+        "year": 2022
     }
 ]

@@ -1,5 +1,6 @@
 class Bike {
   Bike({
+    required this.id,
     required this.name,
     required this.description,
     required this.category,
@@ -8,6 +9,7 @@ class Bike {
     required this.images,
     required this.size,
     required this.color,
+    required this.year,
   });
 
   factory Bike.fromJson(Map<String, dynamic> json) {
@@ -18,6 +20,7 @@ class Bike {
       });
     }
     return Bike(
+      id: json['id'],
       name: json['name'],
       description: json['description'],
       category: json['category'],
@@ -26,11 +29,13 @@ class Bike {
       images: images,
       size: json['size'],
       color: json['color'],
+      year: json['year'],
     );
   }
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
+    data['id'] = id;
     data['name'] = name;
     data['description'] = description;
     data['category'] = category;
@@ -39,9 +44,11 @@ class Bike {
     data['images'] = images;
     data['size'] = size;
     data['color'] = color;
+    data['year'] = year;
     return data;
   }
 
+  final String id;
   final String name;
   final String description;
   final String category;
@@ -50,4 +57,5 @@ class Bike {
   final List<String> images;
   final int size;
   final String color;
+  final int year;
 }
