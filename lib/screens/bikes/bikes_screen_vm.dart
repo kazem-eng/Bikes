@@ -55,4 +55,48 @@ class BikesScreenViewModel extends BaseViewModel<BikesScreenState> {
     Iterable bikesJson = jsonDecode(jsonText);
     return _convertBikesJson(bikesJson);
   }
+
+  void search(String searchValue) {
+    if (state is Loaded) {
+      emit(
+        Search(
+          bikes: (state as Loaded).bikes,
+          foundBikes: (state as Loaded).bikes,
+          searchKey: searchValue,
+        ),
+      );
+      _searchOperation(searchValue);
+    } else {
+      _searchOperation(searchValue);
+    }
+  }
+
+  void _searchOperation(String searchValue) {
+    if (searchValue.isNotEmpty) {
+      final foundRecords = (state as Search)
+          .bikes
+          .where((element) =>
+              element.name.toLowerCase().contains(searchValue.toLowerCase()))
+          .toList();
+      if (foundRecords.isNotEmpty) {
+        emit((state as Search).copyWith(
+          foundBikes: foundRecords,
+          searchKey: searchValue,
+        ));
+      } else {
+        emit((state as Search).copyWith(
+          foundBikes: <Bike>[],
+          searchKey: searchValue,
+        ));
+      }
+    } else {
+      emit(
+        (state as Search).copyWith(
+          bikes: (state as Search).bikes,
+          foundBikes: (state as Search).bikes,
+          searchKey: searchValue,
+        ),
+      );
+    }
+  }
 }

@@ -9,4 +9,9 @@ part 'bikes_screen_m.freezed.dart';
 class BikesScreenState extends BaseState with _$BikesScreenState {
   const factory BikesScreenState.loading() = Loading;
   const factory BikesScreenState.loaded(List<Bike> bikes) = Loaded;
+  const factory BikesScreenState.search({
+    required String searchKey,
+    required List<Bike> bikes,
+    required List<Bike> foundBikes,
+  }) = Search;
 }

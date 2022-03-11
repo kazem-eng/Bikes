@@ -6,6 +6,7 @@ import 'package:bike_catalog/constants/constants.dart';
 import 'package:bike_catalog/models/bike.dart';
 import 'package:bike_catalog/screens/bikes/bikes_screen_m.dart';
 import 'package:bike_catalog/screens/bikes/bikes_screen_vm.dart';
+import 'package:bike_catalog/screens/splash/splash_screen_m.dart';
 import 'package:bike_catalog/theme/theme.dart';
 import 'package:bike_catalog/ui_kit/ui_kit.dart' as ui_kit;
 
@@ -44,19 +45,19 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
   }) {
     return Column(
       children: [
-        _buildToolBar(),
+        _buildToolBar(state),
         _buildBikeList(state: state),
       ],
     );
   }
 
-  Widget _buildToolBar() {
+  Widget _buildToolBar(BikesScreenState state) {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(_toolbarMargin),
         child: Row(
           children: [
-            _buildSearchBox(),
+            _buildSearchBox(state),
             const ui_kit.Label(Strings.filter),
             IconButton(
               onPressed: () {},
@@ -70,13 +71,19 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
     );
   }
 
-  Widget _buildSearchBox() => Expanded(
-        child: ui_kit.TextInput(
-          controller: ui_kit.TextController(),
-          suffixIcon: Icons.search,
-          hint: Strings.search,
-        ),
-      );
+  Widget _buildSearchBox(BikesScreenState state) {
+    final _controller = ui_kit.TextController(text: _getSearchValue(state));
+    return Expanded(
+      child: ui_kit.TextInput(
+        controller: _controller,
+        suffixIcon: Icons.search,
+        hint: Strings.search,
+        onChanged: (searchValue) {
+          viewModel.search(searchValue);
+        },
+      ),
+    );
+  }
 
   Widget _buildSortItems() => ui_kit.ContextMenu(
         actions: [
@@ -101,15 +108,25 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
   }) {
     return Expanded(
       flex: _listFlex,
-      child: ((state as Loaded).bikes.isEmpty)
-          ? const ui_kit.EmptyIndicator()
-          : ListView.builder(
-              itemCount: state.bikes.length,
-              itemBuilder: (context, index) {
-                final bike = state.bikes[index];
-                return _cardItem(bike);
-              },
-            ),
+      child: state is Loaded
+          ? state.bikes.isEmpty
+              ? const ui_kit.EmptyIndicator()
+              : ListView.builder(
+                  itemCount: state.bikes.length,
+                  itemBuilder: (context, index) {
+                    final bike = state.bikes[index];
+                    return _cardItem(bike);
+                  },
+                )
+          : ((state as Search).bikes.isEmpty)
+              ? const ui_kit.EmptyIndicator()
+              : ListView.builder(
+                  itemCount: state.foundBikes.length,
+                  itemBuilder: (context, index) {
+                    final foundBike = state.foundBikes[index];
+                    return _cardItem(foundBike);
+                  },
+                ),
     );
   }
 
@@ -134,4 +151,9 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
           style: const TextStyle(color: Colors.white),
         ),
       );
+
+  String _getSearchValue(BikesScreenState state) =>
+      state is Loaded || state is Initialized
+          ? ''
+          : (state as Search).searchKey;
 }

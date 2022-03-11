@@ -1,8 +1,8 @@
-import 'package:bike_catalog/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:bike_catalog/base/base.dart';
+import 'package:bike_catalog/constants/constants.dart';
 import 'package:bike_catalog/models/bike.dart';
 import 'package:bike_catalog/screens/details/details_screen_m.dart';
 import 'package:bike_catalog/screens/details/details_screen_vm.dart';
@@ -75,7 +75,7 @@ class DetailsScreen extends BaseView<DetailsScreenViewModel> {
           Row(
             children: [
               Label(
-                '${Strings.currenctyIndicator}${_bikeDetails.price}',
+                '${Strings.currenctyIndicator}${_bikeDetails.price.toStringAsFixed(2)}',
                 style: appTheme.typographies.robotoFontFamily.headline6
                     .copyWith(color: Colors.red),
               ),
