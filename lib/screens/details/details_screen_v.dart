@@ -55,8 +55,7 @@ class DetailsScreen extends BaseView<DetailsScreenViewModel> {
     final screenSize = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
         children: [
           Label(
             _bikeDetails.brand,

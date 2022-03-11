@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 
@@ -11,6 +10,7 @@ import 'package:bike_catalog/models/bike.dart';
 import 'package:bike_catalog/screens/bikes/bikes_screen_m.dart';
 import 'package:bike_catalog/services/navigation/navigation.dart';
 import 'package:bike_catalog/services/network/network.dart';
+import 'package:bike_catalog/ui_kit/helpers/toaster_helper.dart';
 
 @injectable
 class BikesScreenViewModel extends BaseViewModel<BikesScreenState> {
@@ -24,14 +24,19 @@ class BikesScreenViewModel extends BaseViewModel<BikesScreenState> {
   final INetworkService _network;
   final INavigationService _navigation;
 
-  void loadBikes() async {
+  Future<void> loadBikes(context) async {
     final bikes = <Bike>[];
     try {
       final response = await _network.get();
       Iterable bikesJson = jsonDecode(response.body);
       bikes.addAll(_convertBikesJson(bikesJson));
     } catch (error) {
-      debugPrint('error: $error');
+      Toaster.showToast(
+        context: context,
+        toastType: ToastType.error,
+        message: Api.noConnection,
+        duration: const Duration(seconds: 10),
+      );
       bikes.addAll(await _loadBikesJsonData());
     }
     emit(Loaded(bikes));

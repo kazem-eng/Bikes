@@ -37,6 +37,11 @@ abstract class IAppThemeData {
   TextStyle get cardSubtitleTextStyle;
   TextStyle get cardDescriptionTextStyle;
 
+  // Dialog
+  ShapeBorder get dialogShapeBorder;
+  Decoration get dialogHeaderPrimaryDecoration;
+  Decoration get dialogHeaderErrorDecoration;
+
   TextStyle getTextStyle({
     FontFamily fontFamily = FontFamily.roboto,
     TypographyFamily typographyFamily = TypographyFamily.body1,

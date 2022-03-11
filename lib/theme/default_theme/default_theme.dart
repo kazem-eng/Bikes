@@ -241,4 +241,29 @@ class DefaultTheme extends IAppThemeData {
       disabledFabPlainButtonStyle.copyWith(
         shape: _fabButtonShapeBuilder(_smallFabBorderRadius),
       );
+
+  @override
+  ShapeBorder get dialogShapeBorder => const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(_defaultBorderRadius),
+        ),
+      );
+
+  @override
+  Decoration get dialogHeaderPrimaryDecoration => BoxDecoration(
+        color: colors.headerPrimaryBackground,
+        borderRadius: const BorderRadius.only(
+          topRight: Radius.circular(_defaultBorderRadius),
+          topLeft: Radius.circular(_defaultBorderRadius),
+        ),
+      );
+
+  @override
+  Decoration get dialogHeaderErrorDecoration => BoxDecoration(
+        color: colors.headerWarningBackground,
+        borderRadius: const BorderRadius.only(
+          topRight: Radius.circular(_defaultBorderRadius),
+          topLeft: Radius.circular(_defaultBorderRadius),
+        ),
+      );
 }

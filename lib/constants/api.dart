@@ -9,7 +9,8 @@ abstract class Api {
   static const placeholederURL = 'http://via.placeholder.com/350x150';
 
   // Error Messages:
-  static const noConnection = 'No Internet connection';
+  static const noConnection =
+      'No Internet connection\nTo see pictures please check your connectivity';
   static const connectionFailure = 'Communication Failure. ';
   static const invalidRequest = 'Invalid Request. ';
   static const unauthorizedRequest = 'Unauthorised. ';

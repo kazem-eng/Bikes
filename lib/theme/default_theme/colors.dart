@@ -137,7 +137,7 @@ class _Colors implements IColors {
   Color get mainBackground => _IColors.blue05;
 
   @override
-  Color get headerPrimaryBackground => _IColors.blue01.withOpacity(_opacity);
+  Color get headerPrimaryBackground => _IColors.grey02.withOpacity(_opacity);
 
   @override
   Color get headerWarningBackground => _IColors.red0;

@@ -11,6 +11,7 @@ class CardItem extends StatelessWidget {
     required String subtitle,
     Function()? onTap,
     String? imageURL,
+    String? titleSuffix,
     Widget? trailingWidget,
     Widget? addOnIcon,
     Key? key,
@@ -18,11 +19,13 @@ class CardItem extends StatelessWidget {
         _subtitle = subtitle,
         _onTap = onTap,
         _imageURL = imageURL,
+        _titleSuffix = titleSuffix,
         _trailingWidget = trailingWidget,
         _addOnIcon = addOnIcon,
         super(key: key);
 
   final String _title;
+  final String? _titleSuffix;
   final String _subtitle;
   final String? _imageURL;
   final Function()? _onTap;
@@ -86,6 +89,18 @@ class CardItem extends StatelessWidget {
                   ],
                 ),
                 _addOnIcon ?? Container(),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 4.0, horizontal: 6),
+                    child: Label(
+                      _titleSuffix ?? '',
+                      style: const TextStyle(
+                          color: Color.fromARGB(255, 131, 131, 131)),
+                    ),
+                  ),
+                )
               ],
             ),
           ),
