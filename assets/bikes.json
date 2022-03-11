@@ -1,18 +1,322 @@
 [
     {
-        "id": "12345",
-        "name": "K-Bike-640",
-        "description": "this is description",
-        "category": "E-bike",
-        "price": 125.5,
-        "thubmnail": "thubmnail.jpg",
+        "id": "12343",
+        "brand": "Trek",
+        "name": "Farley 5",
+        "description": "THE ARC IS BACK. CONJURING UP ALL THE NOSTALGIA, HOOTS AND HOLLARS FROM YESTERYEAR. IT'S YOUR INSTANT-FEEDBACK STEED FOR ANY TRAIL. SHOW IT YOUR SINGLETRACK, PUMP TRACK AND YOUR BIKEPACK ROUTE TOO. IT'S GOT HISTORY TO LIVE UP TO AND NEW HISTORY TO MAKE. AND IT'S ALREADY IMPATIENT.",
+        "category": "Mountain",
+        "price": 2349.99,
+        "thubmnail": "https://www.sefiles.net/images/library/large/trek-farley-5-381306-1.png",
         "images": [
-            "1.jpg",
-            "2.jpg",
-            "3.jpg"
+            "https://www.sefiles.net/images/library/large/trek-farley-5-381306-114.png",
+            "https://www.sefiles.net/images/library/large/trek-farley-5-381306-12.png",
+            "https://www.sefiles.net/images/library/large/trek-farley-5-381306-16.png",
+            "https://www.sefiles.net/images/library/large/trek-farley-5-381306-15.png",
+            "https://www.sefiles.net/images/library/large/trek-farley-5-381306-18.png"
         ],
-        "size": 22,
-        "color": "red",
+        "size": "Medium",
+        "colors": [
+            "black",
+            "red",
+            "blue"
+        ],
         "year": 2022
+    },
+    {
+        "id": "12345",
+        "brand": "yeticycles",
+        "name": "ARC T-Series C1",
+        "description": "THE ARC IS BACK. CONJURING UP ALL THE NOSTALGIA, HOOTS AND HOLLARS FROM YESTERYEAR. IT'S YOUR INSTANT-FEEDBACK STEED FOR ANY TRAIL. SHOW IT YOUR SINGLETRACK, PUMP TRACK AND YOUR BIKEPACK ROUTE TOO. IT'S GOT HISTORY TO LIVE UP TO AND NEW HISTORY TO MAKE. AND IT'S ALREADY IMPATIENT.",
+        "category": "Mountain",
+        "price": 5300.00,
+        "thubmnail": "https://www.sefiles.net/merchant/850/images/small/2022_YetiCycles_ARC_C1_Turq2.png",
+        "images": [
+            "https://www.sefiles.net/merchant/850/images/large/2022_YetiCycles_ARC_C1_Turq.png",
+            "https://www.sefiles.net/merchant/850/images/large/2022_YetiCycles_ARC_C1_Turq1.png",
+            "https://www.sefiles.net/merchant/850/images/small/2022_YetiCycles_ARC_C1_Turq2.png"
+        ],
+        "size": "Small",
+        "colors": [
+            "green",
+            "black",
+            "yellow"
+        ],
+        "year": 2022
+    },
+    {
+        "id": "18343",
+        "brand": "Trek",
+        "name": "Marlin 8",
+        "description": "Marlin 8 is a race-worthy mountain bike that won't break the bank. The smooth, lightweight RockShox fork, tubeless ready wheels, and wide-range 1x drivetrain make this model the best choice for new riders who want a fast cross country hardtail that will hold its own against our higher-end race bikes.It's right for you if... You want a race-ready mountain bike with upgrades on the parts that make a big difference in performance, like a lighter, higher quality suspension fork, wide-range 1x drivetrain, and tubeless ready wheels.",
+        "category": "Mountain",
+        "price": 1629.99,
+        "thubmnail": "https://www.sefiles.net/images/library/large/trek-marlin-8-391121-111.png",
+        "images": [
+            "https://www.sefiles.net/images/library/large/trek-marlin-8-391121-11.png",
+            "https://www.sefiles.net/images/library/large/trek-marlin-8-391121-13.png",
+            "https://www.sefiles.net/images/library/large/trek-marlin-8-391121-110.png",
+            "https://www.sefiles.net/images/library/large/trek-marlin-8-391121-112.png"
+        ],
+        "size": "Large",
+        "colors": [
+            "black",
+            "white"
+        ],
+        "year": 2021
+    },
+    {
+        "id": "56465",
+        "brand": "Giant",
+        "name": "TCX Advanced Pro 1",
+        "description": "Pro cyclocross racers settle for nothing less than perfection, and this is the machine that meets their demands. The all-new TCX Advanced Pro features a redesigned, superlight Advanced-grade composite frame that's handcrafted with race-proven geometry and asymmetrical chainstays for optimal power transfer. Its D-Fuse composite seatpost helps smooth out bumps and vibrations with an innovative D-shaped shaft. New for this year is the option to use a 30.9mm round standard or dropper seatpost instead depending on your riding style and terrain. Other innovations include a lightweight composite WheelSystem and tubeless tires right out of the box; flat-mount disc brakes; and 12mm front and rear thru-axles for total control and fast cornering, sprinting and climbing in all conditions.",
+        "category": "Road",
+        "price": 5299.50,
+        "thubmnail": "https://www.sefiles.net/images/library/large/giant-tcx-advanced-pro-1-406587-1-11-1.jpg",
+        "images": [
+            "https://images.giant-bicycles.com/b_white,c_pad,h_650,q_80/whfrfboazog2iaquem0g/MY21TCXADVPro1_ColorACarbon_back.jpg",
+            "https://images.giant-bicycles.com/b_white,c_pad,h_650,q_80/vqnnnplj8wd4djzb39ba/MY21TCXADVPro1_ColorACarbon_Road-6.jpg",
+            "https://images.giant-bicycles.com/b_white,c_pad,h_650,q_80/au93m2pwo73ur6fsqlii/MY21TCXADVPro1_ColorACarbon_Road-8.jpg"
+        ],
+        "size": "Large",
+        "colors": [
+            "black",
+            "red"
+        ],
+        "year": 2022
+    },
+    {
+        "id": "76585",
+        "brand": "Specialized Turbo",
+        "name": "Creo SL Comp Carbon",
+        "description": "We have a long history of developing the world's highest-performing road bikes. Tarmac, Venge, Roubaix, Allez, Diverge—each one dominates their respective category, featuring the best technologies in the industry. And, while that's a tough palmarès to follow, the Turbo Creo SL redefines e-road bike performance. It's lightweight, smooth, capable, and lively—all with the power to flatten mountains, laugh at headwinds, and go farther than you ever thought possible. It's you, only faster.",
+        "category": "Road",
+        "price": 8999.40,
+        "thubmnail": "https://www.sefiles.net/images/library/large/specialized-turbo-creo-sl-comp-carbon-365039-1.jpg",
+        "images": [
+            "https://assets.specialized.com/i/specialized/98120-50_CREO-SL-COMP-CARBON-DOVGRY-GLDGSTPRL-RKTRED_FDSQ?bg=rgb(241,241,241)&w=2500&h=1406&fmt=auto",
+            "https://assets.specialized.com/i/specialized/TRBO-983__PDP_Product-Carousel_3840x1280_DoveGray_Detail01?bg=rgb(241,241,241)&w=2500&h=1406&fmt=auto",
+            "https://assets.specialized.com/i/specialized/TRBO-983__PDP_Product-Carousel_3840x1280_DoveGray_Hero?bg=rgb(241,241,241)&w=2500&h=1406&fmt=auto"
+        ],
+        "size": "Large",
+        "colors": [
+            "green",
+            "black",
+            "yellow"
+        ],
+        "year": 2021
+    },
+    {
+        "id": "12278",
+        "brand": "Cervelo",
+        "name": "Caledonia-5 Ultegra Di2 ",
+        "description": "The Caledonia is the bike we keep reaching for when we know the odometer's going well past the triple-digit mark. Long rides invariably have some smooth tarmac, some junk pavement over backroads, a cutty singletrack connector, and maybe even your own local Strade Bianche sector. So we built a bike that could take on all of them, do it well, and fit fenders in case the ominous clouds turn into a downpour 130km into your day.",
+        "category": "Road",
+        "price": 9300.30,
+        "thubmnail": "https://www.sefiles.net/images/library/large/cervelo-caledonia-5-ultegra-di2-401670-11.jpg",
+        "images": [
+            "https://s14761.pcdn.co/wp-content/uploads/sites/3/2021/04/Cervelo-Caledonia-5-2021-Test-Review-277-1140x760.jpg",
+            "https://s14761.pcdn.co/wp-content/uploads/sites/3/2021/04/Cervelo-Caledonia-5-2021-Test-Review-289-600x400.jpg",
+            "https://s14761.pcdn.co/wp-content/uploads/sites/3/2021/04/Cervelo-Caledonia-5-2021-Test-Review-294-600x400.jpg",
+            "https://s14761.pcdn.co/wp-content/uploads/sites/3/2021/04/Cervelo-Caledonia-5-2021-Test-Review-294-600x400.jpg",
+            "https://s14761.pcdn.co/wp-content/uploads/sites/3/2021/04/Cervelo-Caledonia-5-2021-Test-Review-281-600x400.jpg"
+        ],
+        "size": "Small",
+        "colors": [
+            "grey",
+            "orange"
+        ],
+        "year": 2022
+    },
+    {
+        "id": "34123",
+        "brand": "Trek",
+        "name": "Verve+ 2 Lowstep",
+        "description": "Verve+ 2 Lowstep is an electric hybrid bike that will help you get out and ride more. Your daily cruises, commutes, and workouts will all get a boost from the reliable Bosch pedal-assist system that sustains speeds of up to 20 mph. Plus, this e-bike is equipped with parts that put your comfort and safety first, like a road-smoothing suspension seatpost, wide, stable tires, and front and rear lights.",
+        "category": "E-Bike",
+        "price": 3649.99,
+        "thubmnail": "https://www.sefiles.net/images/library/large/trek-verve-copy-365895-1.jpg",
+        "images": [
+            "https://www.sefiles.net/images/library/large/trek-verve-copy-365895-11.jpg",
+            "https://www.sefiles.net/images/library/large/trek-verve-copy-365895-12.jpg",
+            "https://www.sefiles.net/images/library/large/trek-verve-copy-365895-12.jpg",
+            "https://www.sefiles.net/images/library/large/trek-verve-copy-365895-19.jpg",
+            "https://www.sefiles.net/images/library/large/trek-verve-copy-365895-15.jpg"
+        ],
+        "size": "Large",
+        "colors": [
+            "black",
+            "red",
+            "blue"
+        ],
+        "year": 2021
+    },
+    {
+        "id": "54984",
+        "brand": "Trek",
+        "name": "Rail 9.7",
+        "description": "Rail 9.7 is a long-travel carbon electric mountain bike that gets you to the fun stuff faster. It feels and rides just like our rowdiest trail bikes, and it's built with the same trail-specific tech. The difference is that the powerful Bosch drive system zips up climbs so you can spend less time grinding and more time getting rad.",
+        "category": "E-Bike",
+        "price": 9349.99,
+        "thubmnail": "https://www.sefiles.net/images/library/large/trek-rail-9-10.jpg",
+        "images": [
+            "https://www.sefiles.net/images/library/large/trek-rail-9-10.jpg",
+            "https://www.sefiles.net/images/library/large/trek-rail-9-2.jpg",
+            "https://www.sefiles.net/images/library/large/trek-rail-9-3.jpg",
+            "https://www.sefiles.net/images/library/large/trek-rail-9.7-402181-14.jpg",
+            "https://www.sefiles.net/images/library/large/trek-rail-9.7-402181-15.jpg"
+        ],
+        "size": "Medium",
+        "colors": [
+            "black",
+            "red"
+        ],
+        "year": 2022
+    },
+    {
+        "id": "11122",
+        "brand": "Trek",
+        "name": "Domane+ LT 7",
+        "description": "Domane+ LT 7 is a carbon drop-bar electric bike designed for roadies who want an authentic road bike experience with an extra boost. The sleek and efficient Fazua drive system kicks things up a notch when you need it-like riding into a headwind or beating your buddy up a climb-but doesn't drag or hold you back when it's not in use. You also get the crisp, precise shifting of all-new wireless electronic Shimano Ultegra Di2.",
+        "category": "E-Bike",
+        "price": 1799.99,
+        "thubmnail": "https://www.sefiles.net/images/library/large/trek-domane-lt-7-414411-1-12-2.jpg",
+        "images": [
+            "https://trek.scene7.com/is/image/TrekBicycleProducts/DomanePlusLT7US_20_32577_B_Portrait?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440",
+            "https://trek.scene7.com/is/image/TrekBicycleProducts/DomanePlusLT7US_20_32577_B_Alt7?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440",
+            "https://trek.scene7.com/is/image/TrekBicycleProducts/DomanePlusLT7US_20_32577_C_Portrait?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440",
+            "https://trek.scene7.com/is/image/TrekBicycleProducts/DomanePlusLT7US_20_32577_B_Alt9?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440",
+            "https://trek.scene7.com/is/image/TrekBicycleProducts/DomanePlusLT7US_20_32577_C_Alt5?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440"
+        ],
+        "size": "Large",
+        "colors": [
+            "green",
+            "black",
+            "yellow"
+        ],
+        "year": 2020
+    },
+    {
+        "id": "43434",
+        "brand": "Trek",
+        "name": "Dual Sport 3",
+        "description": "Dual Sport 3 is a high-performance hybrid bike with upgraded components that stand up to long rides on a variety of surfaces, from city streets to gravel trails and more! Plus, front suspension, a wide-range 1x drivetrain, tubeless-ready rims, and puncture-resistant tires give you the confidence to take on bigger adventures.",
+        "category": "Hybrid",
+        "price": 1159.99,
+        "thubmnail": "https://www.sefiles.net/images/library/large/trek-dual-sport-3-397045-11.jpg",
+        "images": [
+            "https://www.sefiles.net/images/library/large/trek-dual-sport-3-397045-11.jpg",
+            "https://www.sefiles.net/images/library/large/trek-dual-sport-3-397045-16.jpg",
+            "https://www.sefiles.net/images/library/large/trek-dual-sport-3-397045-13.jpg",
+            "https://www.sefiles.net/images/library/large/trek-dual-sport-3-397045-111.jpg"
+        ],
+        "size": "Large",
+        "colors": [
+            "green",
+            "black",
+            "yellow"
+        ],
+        "year": 2018
+    },
+    {
+        "id": "78877",
+        "brand": "Cannondale",
+        "name": "Adventure 2",
+        "description": "Ride Content Cruise effortlessly down the lane, enjoy the boardwalk bike path. Life's for living. Live it up.",
+        "category": "Hybrid",
+        "price": 556.56,
+        "thubmnail": "https://www.sefiles.net/images/library/large/cannondale-adventure-2-366119-1.png",
+        "images": [
+            "https://cdn.shopify.com/s/files/1/0532/7139/6534/products/cannondale-adv-2-blu-22-s1_hr_1800x1800.jpg?v=1644317755",
+            "https://cdn.shopify.com/s/files/1/0532/7139/6534/products/cannondale-adv-2-blu-22-s2_hr_1800x1800.jpg?v=1644317756",
+            "https://cdn.shopify.com/s/files/1/0532/7139/6534/products/cannondale-adv-2-blu-22_hr_1800x1800.jpg?v=1644317756"
+        ],
+        "size": "Small",
+        "colors": [
+            "black",
+            "white"
+        ],
+        "year": 2019
+    },
+    {
+        "id": "66443",
+        "brand": "Trek",
+        "name": "Allant+ 9.9S",
+        "description": "Allant+ 9.9S is the ultimate e-bike, one that’s more than worthy of replacing your car. The super powerful Bosch Performance Speed motor and extra long-range battery let you go fast and far for long-distance commutes and speedy weekend rides. Plus, the light carbon frame is trimmed with thoughtful features designed specifically for dedicated e-bike riders, including a controller that integrates with your smartphone so you can use it for directions, music, and more.",
+        "category": "Hybrid",
+        "price": 6349.99,
+        "thubmnail": "https://trek.scene7.com/is/image/TrekBicycleProducts/AllantPlus99S_22_35030_A_Primary?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440",
+        "images": [
+            "https://trek.scene7.com/is/image/TrekBicycleProducts/AllantPlus99S_22_35030_A_Portrait?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440",
+            "https://trek.scene7.com/is/image/TrekBicycleProducts/AllantPlus99S_22_35030_A_Alt5?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440",
+            "https://trek.scene7.com/is/image/TrekBicycleProducts/AllantPlus99S_22_35030_A_Alt9?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440",
+            "https://trek.scene7.com/is/image/TrekBicycleProducts/AllantPlus99S_22_35030_A_Alt8?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440"
+        ],
+        "size": "Medium",
+        "colors": [
+            "black",
+            "red",
+            "blue"
+        ],
+        "year": 2020
+    },
+    {
+        "id": "15151",
+        "brand": "Cube",
+        "name": "Stereo 140 HPC",
+        "description": "Arguably their most ambitious bike for young riders so far, the Cube Stereo 140 HPC Rookie moves the bar for kids' bikes even higher. From its perfectly proportioned carbon frame to the 150mm Marzocchi Z2 suspension fork and Fox Float DPS Performance rear shock, it's a serious bike for having serious fun on the trails.",
+        "category": "Kid",
+        "price": 3200.99,
+        "thubmnail": "https://cd.bike-discount.de/media/image/cb/13/b5/559110_00_800x800.jpg",
+        "images": [
+            "https://cd.bike-discount.de/media/image/17/0f/72/559110_D1_800x800.jpg",
+            "https://cd.bike-discount.de/media/image/07/77/ec/559110_D4_800x800.jpg",
+            "https://cd.bike-discount.de/media/image/0b/6a/3b/559110_D3_800x800.jpg"
+        ],
+        "size": "Small",
+        "colors": [
+            "black",
+            "white"
+        ],
+        "year": 2022
+    },
+    {
+        "id": "15151",
+        "brand": "Puky",
+        "name": "CYKE 16-1-F Alu",
+        "description": "The PUKY CYKE 16-1 children's bike with freewheel brings the fun of movement and the feeling of freedom to kids from the age of 4. The child-friendly frame geometry and lightweight aluminium components as well as the PUKY SAFETY SET make CYKE the most reliable companion for little riders.",
+        "category": "Kid",
+        "price": 400.99,
+        "thubmnail": "https://cd.bike-discount.de/media/image/f1/13/cd/Puky-CYKE-16-F-1_800x800.jpg",
+        "images": [
+            "https://cd.bike-discount.de/media/image/f3/5a/f2/Puky-CYKE-16-F-3_800x800.jpg",
+            "https://cd.bike-discount.de/media/image/34/96/fc/Puky-CYKE-16-F-2_800x800.jpg",
+            "https://cd.bike-discount.de/media/image/f1/13/cd/Puky-CYKE-16-F-1_800x800.jpg"
+        ],
+        "size": "Small",
+        "colors": [
+            "green",
+            "black",
+            "yellow"
+        ],
+        "year": 2022
+    },
+    {
+        "id": "15151",
+        "brand": "Cruzee",
+        "name": "Cruzee Superlight Balance Bike",
+        "description": "The CRUZEE Balance Bike is a unique and highly thought-out product. It has been developed and designed in the USA to set a new standard in terms of price and functionality - and the result speaks for itself! The light and yet robust 12 aluminum frame that has been anodized. This allows a unique coloring and ensures that no more damage than necessary can occur. This, of course, does not protect you against possible scratches, but no damage occurs due to to paint bursting off.",
+        "category": "Kid",
+        "price": 150.50,
+        "thubmnail": "https://cd.bike-discount.de/media/image/9f/bc/8b/Cruzee-rot.jpg",
+        "images": [
+            "https://cd.bike-discount.de/media/image/9f/bc/8b/Cruzee-rot.jpg"
+        ],
+        "size": "Small",
+        "colors": [
+            "black",
+            "red",
+            "blue"
+        ],
+        "year": 2018
     }
 ]

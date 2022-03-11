@@ -12,8 +12,8 @@ class EmptyIndicator extends StatelessWidget {
     final appTheme = AppTheme.of(context).theme;
     return Center(
       child: Label(
-        Strings.emptyData,
-        typography: TypographyStyle.headline1,
+        Strings.emptyList,
+        typography: TypographyFamily.headline1,
         color: appTheme.colors.defaultText,
       ),
     );

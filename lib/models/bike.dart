@@ -8,12 +8,19 @@ class Bike {
     required this.thubmnail,
     required this.images,
     required this.size,
-    required this.color,
+    required this.colors,
     required this.year,
+    required this.brand,
   });
 
   factory Bike.fromJson(Map<String, dynamic> json) {
     final images = <String>[];
+    if (json['images'] != null) {
+      json['images'].forEach((image) {
+        images.add(image);
+      });
+    }
+    final colors = <String>[];
     if (json['images'] != null) {
       json['images'].forEach((image) {
         images.add(image);
@@ -28,8 +35,9 @@ class Bike {
       thubmnail: json['thubmnail'],
       images: images,
       size: json['size'],
-      color: json['color'],
+      colors: colors,
       year: json['year'],
+      brand: json['brand'],
     );
   }
 
@@ -43,19 +51,21 @@ class Bike {
     data['thubmnail'] = thubmnail;
     data['images'] = images;
     data['size'] = size;
-    data['color'] = color;
+    data['colors'] = colors;
     data['year'] = year;
+    data['brand'] = brand;
     return data;
   }
 
   final String id;
   final String name;
+  final String brand;
   final String description;
   final String category;
-  final double price;
+  final num price;
   final String thubmnail;
   final List<String> images;
-  final int size;
-  final String color;
-  final int year;
+  final String size;
+  final List<String> colors;
+  final num year;
 }

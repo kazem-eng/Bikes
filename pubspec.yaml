@@ -8,6 +8,8 @@ environment:
 
 dependencies:
   auto_route: ^3.2.1
+  cached_network_image: ^3.2.0
+  carousel_slider: ^4.0.0
   cupertino_icons: ^1.0.2
   flash: ^2.0.3
   flutter:

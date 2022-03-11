@@ -5,7 +5,8 @@ abstract class Api {
   static const headerContentTypeKey = 'Content-Type';
   static const headerContentTypeValue = 'application/json';
   static const baseURL =
-      'https://run.mocky.io/v3/08634b88-93b7-484e-9501-7cb38a073bf1';
+      'https://run.mocky.io/v3/83b4d080-3d09-4d75-acb2-65b047b38ef8';
+  static const placeholederURL = 'http://via.placeholder.com/350x150';
 
   // Error Messages:
   static const noConnection = 'No Internet connection';
