@@ -1,3 +1,10 @@
+enum SortType {
+  priceASC,
+  priceDES,
+  year,
+  alphabetically,
+}
+
 class Bike {
   Bike({
     required this.id,

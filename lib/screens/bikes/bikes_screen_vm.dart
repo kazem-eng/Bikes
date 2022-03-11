@@ -6,6 +6,7 @@ import 'package:injectable/injectable.dart';
 
 import 'package:bike_catalog/base/base.dart';
 import 'package:bike_catalog/constants/constants.dart';
+import 'package:bike_catalog/helpers/list_helpers.dart';
 import 'package:bike_catalog/models/bike.dart';
 import 'package:bike_catalog/screens/bikes/bikes_screen_m.dart';
 import 'package:bike_catalog/services/navigation/navigation.dart';
@@ -99,4 +100,36 @@ class BikesScreenViewModel extends BaseViewModel<BikesScreenState> {
       );
     }
   }
+
+  void sort({required SortType sortType}) {
+    var sortedBikes = <Bike>[];
+    switch (sortType) {
+      case SortType.priceASC:
+        sortedBikes = getBikesToSort().sorted(
+          (a, b) => b.price.compareTo(a.price),
+        );
+        break;
+      case SortType.priceDES:
+        sortedBikes = getBikesToSort().sorted(
+          (a, b) => a.price.compareTo(b.price),
+        );
+        break;
+      case SortType.alphabetically:
+        sortedBikes = getBikesToSort().sorted(
+          (a, b) => a.name.compareTo(b.name),
+        );
+        break;
+      case SortType.year:
+        sortedBikes = getBikesToSort().sorted(
+          (a, b) => a.year.compareTo(b.year),
+        );
+        break;
+    }
+    state is Loaded
+        ? emit((state as Loaded).copyWith(bikes: sortedBikes))
+        : emit((state as Search).copyWith(foundBikes: sortedBikes));
+  }
+
+  List<Bike> getBikesToSort() =>
+      state is Loaded ? (state as Loaded).bikes : (state as Search).foundBikes;
 }

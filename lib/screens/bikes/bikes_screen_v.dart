@@ -88,17 +88,25 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
   Widget _buildSortItems() => ui_kit.ContextMenu(
         actions: [
           ui_kit.ContextMenuAction(
-            title: Strings.highestPrice,
-          ),
+              title: Strings.highestPrice,
+              onTap: () {
+                viewModel.sort(sortType: SortType.priceASC);
+              }),
           ui_kit.ContextMenuAction(
-            title: Strings.lowestPrice,
-          ),
+              title: Strings.lowestPrice,
+              onTap: () {
+                viewModel.sort(sortType: SortType.priceDES);
+              }),
           ui_kit.ContextMenuAction(
-            title: Strings.alphabetically,
-          ),
+              title: Strings.alphabetically,
+              onTap: () {
+                viewModel.sort(sortType: SortType.alphabetically);
+              }),
           ui_kit.ContextMenuAction(
-            title: Strings.year,
-          ),
+              title: Strings.year,
+              onTap: () {
+                viewModel.sort(sortType: SortType.year);
+              }),
         ],
         icon: const Icon(Icons.sort),
       );
@@ -107,28 +115,21 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
     required BikesScreenState state,
   }) {
     return Expanded(
-      flex: _listFlex,
-      child: state is Loaded
-          ? state.bikes.isEmpty
-              ? const ui_kit.EmptyIndicator()
-              : ListView.builder(
-                  itemCount: state.bikes.length,
-                  itemBuilder: (context, index) {
-                    final bike = state.bikes[index];
-                    return _cardItem(bike);
-                  },
-                )
-          : ((state as Search).bikes.isEmpty)
-              ? const ui_kit.EmptyIndicator()
-              : ListView.builder(
-                  itemCount: state.foundBikes.length,
-                  itemBuilder: (context, index) {
-                    final foundBike = state.foundBikes[index];
-                    return _cardItem(foundBike);
-                  },
-                ),
-    );
+        flex: _listFlex,
+        child: state is Loaded
+            ? _buildListView(bikes: state.bikes)
+            : _buildListView(bikes: (state as Search).foundBikes));
   }
+
+  Widget _buildListView({required List<Bike> bikes}) => bikes.isEmpty
+      ? const ui_kit.EmptyIndicator()
+      : ListView.builder(
+          itemCount: bikes.length,
+          itemBuilder: (context, index) {
+            final foundBike = bikes[index];
+            return _cardItem(foundBike);
+          },
+        );
 
   Widget _cardItem(Bike bike) => ui_kit.CardItem(
         title: bike.brand,
