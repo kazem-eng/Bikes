@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+
 import 'package:bike_catalog/theme/theme.dart';
 import 'package:bike_catalog/ui_kit/ui_kit.dart';
-import 'package:flutter/material.dart';
 
 enum ButtonType {
   button,

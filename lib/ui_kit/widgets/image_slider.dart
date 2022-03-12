@@ -1,8 +1,9 @@
-import 'package:bike_catalog/constants/constants.dart';
-import 'package:bike_catalog/theme/app_theme_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+
+import 'package:bike_catalog/constants/constants.dart';
+import 'package:bike_catalog/theme/app_theme_widget.dart';
 
 class CarouselWithIndicatorDemo extends StatefulWidget {
   const CarouselWithIndicatorDemo({
@@ -18,8 +19,14 @@ class CarouselWithIndicatorDemo extends StatefulWidget {
 
 class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
   static const _sliderMargin = 2.0;
+  static const _aspectRatio = 2.0;
+  static const _viewportFraction = 1.0;
+  static const _sliderIndicatorSize = 10.0;
+  static const _sliderIndicatorMargin =
+      EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0);
+
   final _controller = CarouselController();
-  var _current = 0;
+  var _currentImageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +37,12 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
             items: _imageSliders(),
             carouselController: _controller,
             options: CarouselOptions(
-                aspectRatio: 2.0,
+                aspectRatio: _aspectRatio,
                 disableCenter: true,
-                viewportFraction: 1.0,
+                viewportFraction: _viewportFraction,
                 onPageChanged: (index, reason) {
                   setState(() {
-                    _current = index;
+                    _currentImageIndex = index;
                   });
                 }),
           ),
@@ -51,16 +58,16 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
           return GestureDetector(
             onTap: () => _controller.animateToPage(entry.key),
             child: Container(
-              width: 10.0,
-              height: 10.0,
-              margin:
-                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+              width: _sliderIndicatorSize,
+              height: _sliderIndicatorSize,
+              margin: _sliderIndicatorMargin,
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: (Theme.of(context).brightness == Brightness.dark
                           ? Colors.white
                           : Colors.black)
-                      .withOpacity(_current == entry.key ? 0.9 : 0.4)),
+                      .withOpacity(
+                          _currentImageIndex == entry.key ? 0.9 : 0.4)),
             ),
           );
         }).toList(),
@@ -90,7 +97,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                         left: 0.0,
                         right: 0.0,
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
                                 Color.fromARGB(200, 0, 0, 0),

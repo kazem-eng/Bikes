@@ -52,7 +52,7 @@ class _ContextMenuItemState extends State<_ContextMenuItem> {
   }) {
     assert(
       icon != null || title != null,
-      'Either icon or title should be provided',
+      Api.contextMenuException,
     );
     final hasText = title != null || subtitle != null;
     final iconRightPadding = hasText ? _ContextMenuItem._listTilePadding : 0.0;

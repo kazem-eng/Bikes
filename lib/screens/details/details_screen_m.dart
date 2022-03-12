@@ -1,7 +1,7 @@
-import 'package:bike_catalog/base/base.dart';
-import 'package:bike_catalog/models/bike.dart';
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'package:bike_catalog/base/base.dart';
+import 'package:bike_catalog/models/models.dart';
 
 part 'details_screen_m.freezed.dart';
 

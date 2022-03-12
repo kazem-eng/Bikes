@@ -1,6 +1,8 @@
+import 'package:flutter/material.dart';
+
+import 'package:bike_catalog/constants/constants.dart';
 import 'package:bike_catalog/theme/theme.dart';
 import 'package:bike_catalog/ui_kit/ui_kit.dart';
-import 'package:flutter/material.dart';
 
 enum HeroType {
   avatar,
@@ -25,10 +27,9 @@ class HeroAvatar extends StatelessWidget {
     Color? backgroundColor,
     Key? key,
   })  : assert(
-            heroType != HeroType.avatar ||
-                imageAsset != null ||
-                imageURL != null,
-            'Either imageAsset or imageURL must be provided when using avatar type'),
+          heroType != HeroType.avatar || imageAsset != null || imageURL != null,
+          Api.heroException,
+        ),
         _heroType = heroType,
         _heroSize = heroSize,
         _imageAsset = imageAsset,

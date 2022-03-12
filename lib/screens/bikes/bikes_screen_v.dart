@@ -3,8 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:bike_catalog/base/base.dart';
 import 'package:bike_catalog/constants/constants.dart';
-import 'package:bike_catalog/models/bike.dart';
-import 'package:bike_catalog/models/bike_enums.dart';
+import 'package:bike_catalog/models/models.dart';
 import 'package:bike_catalog/screens/bikes/bikes_screen_m.dart';
 import 'package:bike_catalog/screens/bikes/bikes_screen_vm.dart';
 import 'package:bike_catalog/screens/bikes/widgets/filter_widget.dart';
@@ -64,30 +63,29 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
   Widget _buildToolBar({
     required BikesScreenState state,
     required BuildContext context,
-  }) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.all(_toolbarMargin),
-        child: Row(
-          children: [
-            _buildSearchBox(state),
-            const ui_kit.Label(Strings.filter),
-            IconButton(
-              onPressed: () {
-                _showFilterDialog(
-                  context: context,
-                  state: state,
-                );
-              },
-              icon: const Icon(Icons.filter_alt_outlined),
-            ),
-            const ui_kit.Label(Strings.sort),
-            _buildSortItems(),
-          ],
+  }) =>
+      Expanded(
+        child: Padding(
+          padding: const EdgeInsets.all(_toolbarMargin),
+          child: Row(
+            children: [
+              _buildSearchBox(state),
+              const ui_kit.Label(Strings.filter),
+              IconButton(
+                onPressed: () {
+                  _showFilterDialog(
+                    context: context,
+                    state: state,
+                  );
+                },
+                icon: const Icon(Icons.filter_alt_outlined),
+              ),
+              const ui_kit.Label(Strings.sort),
+              _buildSortItems(),
+            ],
+          ),
         ),
-      ),
-    );
-  }
+      );
 
   Widget _buildSearchBox(BikesScreenState state) {
     final _controller = ui_kit.TextController(text: _getSearchValue(state));
@@ -132,8 +130,8 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
   Widget _buildBikeList({
     required BikesScreenState state,
     required BuildContext context,
-  }) {
-    return Expanded(
+  }) =>
+      Expanded(
         flex: _listFlex,
         child: state is Loaded
             ? _buildListView(
@@ -145,8 +143,8 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
                     ? state.filteredBikes
                     : state.foundBikes,
                 context: context,
-              ));
-  }
+              ),
+      );
 
   Widget _buildListView({
     required List<Bike> bikes,
@@ -193,9 +191,6 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
         ],
       );
 
-  String _getSearchValue(BikesScreenState state) =>
-      state is Search ? state.searchKey : '';
-
   Future<void> _showFilterDialog({
     required BuildContext context,
     required BikesScreenState state,
@@ -213,7 +208,10 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
       ),
       maxHeight: 600,
     ).then(
-      (value) => viewModel.updateBikes(),
+      (value) => viewModel.filterBikes(),
     );
   }
+
+  String _getSearchValue(BikesScreenState state) =>
+      state is Search ? state.searchKey : '';
 }

@@ -1,5 +1,6 @@
-import 'package:bike_catalog/theme/app_theme_widget.dart';
 import 'package:flutter/material.dart';
+
+import 'package:bike_catalog/theme/theme.dart';
 
 class Loading extends StatelessWidget {
   const Loading({

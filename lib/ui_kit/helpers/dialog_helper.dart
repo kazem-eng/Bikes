@@ -1,6 +1,7 @@
-import 'package:bike_catalog/ui_kit/ui_kit.dart';
-import 'package:bike_catalog/ui_kit/widgets/custom_dialog.dart';
 import 'package:flutter/material.dart';
+
+import 'package:bike_catalog/constants/constants.dart';
+import 'package:bike_catalog/ui_kit/ui_kit.dart';
 
 abstract class DialogHelper {
   static Future<void> show<T>({
@@ -21,7 +22,7 @@ abstract class DialogHelper {
   }) {
     assert(
       !isDismissible || barrierLabel != null,
-      'barrierLabel must be provided when dialog is dismissible',
+      Api.dialogErrorException,
     );
     return showGeneralDialog(
       context: context,

@@ -18,4 +18,12 @@ abstract class Api {
   static const serverError = 'Server Error. ';
   static const unknownError = 'Something went wrong. ';
   static const formatException = 'Invalid format. Please check url format. ';
+
+  static const contextMenuException = 'Either icon or title should be provided';
+  static const heroException =
+      'Either imageAsset or imageURL must be provided when using avatar type';
+  static const customDialogException =
+      'Either header or title must be provided';
+  static const dialogErrorException =
+      'barrierLabel must be provided when dialog is dismissible';
 }

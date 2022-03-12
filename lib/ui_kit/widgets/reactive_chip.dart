@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+
 import 'package:bike_catalog/theme/theme.dart';
 import 'package:bike_catalog/ui_kit/ui_kit.dart';
-import 'package:flutter/material.dart';
 
 class ReactiveChip extends StatefulWidget {
   const ReactiveChip({
@@ -40,14 +41,15 @@ class _ReactiveChipState extends State<ReactiveChip> {
         });
         widget._onSelected?.call(value);
       },
-      selectedColor: Colors.green,
+      selectedColor: appTheme.colors.successLabel,
       selected: isSelected,
       label: Label(
         widget._label,
         style: TextStyle(
-            color: isSelected
-                ? appTheme.colors.secondaryBackground
-                : appTheme.colors.defaultText),
+          color: isSelected
+              ? appTheme.colors.secondaryBackground
+              : appTheme.colors.defaultText,
+        ),
       ),
     );
   }

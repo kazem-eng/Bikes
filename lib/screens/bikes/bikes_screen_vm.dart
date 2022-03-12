@@ -5,14 +5,10 @@ import 'package:injectable/injectable.dart';
 
 import 'package:bike_catalog/base/base.dart';
 import 'package:bike_catalog/constants/constants.dart';
-import 'package:bike_catalog/helpers/enum_helper.dart';
-import 'package:bike_catalog/helpers/list_helpers.dart';
-import 'package:bike_catalog/models/bike.dart';
-import 'package:bike_catalog/models/bike_enums.dart';
-import 'package:bike_catalog/models/filter.dart';
+import 'package:bike_catalog/helpers/helpers.dart';
+import 'package:bike_catalog/models/models.dart';
 import 'package:bike_catalog/screens/bikes/bikes_screen_m.dart';
-import 'package:bike_catalog/services/navigation/navigation.dart';
-import 'package:bike_catalog/services/network/network.dart';
+import 'package:bike_catalog/services/services.dart';
 import 'package:bike_catalog/ui_kit/helpers/toaster_helper.dart';
 
 @injectable
@@ -159,17 +155,16 @@ class BikesScreenViewModel extends BaseViewModel<BikesScreenState> {
           ));
   }
 
-  void updateBikes() {
+  void filterBikes() {
     final filter = getFilter();
     if (!filter.isEmpty) {
       final filteredBikes = _filterByCategory(filter);
       final fileteredBySize = _filterBySize(filter);
       final fileteredByPrice = _filterByPrice(filter);
 
-      filteredBikes.removeWhere((item) {
-        return !fileteredBySize.contains(item);
-      });
+      filteredBikes.removeWhere((item) => !fileteredBySize.contains(item));
       filteredBikes.removeWhere((item) => !fileteredByPrice.contains(item));
+
       state is Loaded
           ? emit((state as Loaded).copyWith(
               filteredBikes: filteredBikes,

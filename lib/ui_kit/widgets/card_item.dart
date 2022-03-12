@@ -1,7 +1,7 @@
-import 'package:bike_catalog/constants/constants.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
+import 'package:bike_catalog/constants/constants.dart';
 import 'package:bike_catalog/theme/theme.dart';
 import 'package:bike_catalog/ui_kit/ui_kit.dart';
 

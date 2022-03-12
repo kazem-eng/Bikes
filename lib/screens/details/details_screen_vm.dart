@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 
 import 'package:bike_catalog/base/base.dart';
-import 'package:bike_catalog/models/bike.dart';
+import 'package:bike_catalog/models/models.dart';
 import 'package:bike_catalog/screens/details/details_screen_m.dart';
 
 @injectable

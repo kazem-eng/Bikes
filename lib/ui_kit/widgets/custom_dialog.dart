@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
+
+import 'package:bike_catalog/constants/constants.dart';
 import 'package:bike_catalog/theme/theme.dart';
 import 'package:bike_catalog/ui_kit/helpers/enum_helper.dart';
 import 'package:bike_catalog/ui_kit/ui_kit.dart';
-import 'package:flutter/material.dart';
 
 enum DialogActionType {
   ok,
@@ -35,7 +37,7 @@ class CustomDialog extends StatelessWidget {
         _dialogStyle = dialogStyle,
         assert(
           header != null || (title != null && title.isNotEmpty),
-          'Either header or title must be provided',
+          Api.customDialogException,
         ),
         super(key: key);
 

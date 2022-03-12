@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:bike_catalog/base/base.dart';
-import 'package:bike_catalog/constants/resources.dart';
+import 'package:bike_catalog/constants/constants.dart';
 import 'package:bike_catalog/screens/splash/splash_screen_m.dart';
 import 'package:bike_catalog/screens/splash/splash_screen_vm.dart';
 

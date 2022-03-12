@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:bike_catalog/base/base.dart';
-import 'package:bike_catalog/constants/constants.dart';
-import 'package:bike_catalog/models/bike.dart';
 import 'package:bike_catalog/screens/details/details_screen_m.dart';
 import 'package:bike_catalog/screens/details/details_screen_vm.dart';
+import 'package:bike_catalog/base/base.dart';
+import 'package:bike_catalog/constants/constants.dart';
+import 'package:bike_catalog/models/models.dart';
 import 'package:bike_catalog/theme/theme.dart';
 import 'package:bike_catalog/ui_kit/ui_kit.dart';
-import 'package:bike_catalog/ui_kit/widgets/image_slider.dart';
 
 class DetailsScreen extends BaseView<DetailsScreenViewModel> {
   DetailsScreen({

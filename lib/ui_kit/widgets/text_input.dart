@@ -1,6 +1,7 @@
-import 'package:bike_catalog/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'package:bike_catalog/theme/theme.dart';
 
 enum InputType {
   text,

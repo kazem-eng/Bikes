@@ -1,6 +1,8 @@
+import 'package:flutter/material.dart';
+
+import 'package:bike_catalog/constants/constants.dart';
 import 'package:bike_catalog/theme/theme.dart';
 import 'package:bike_catalog/ui_kit/ui_kit.dart';
-import 'package:flutter/material.dart';
 
 part 'context_menu_divider.dart';
 part 'context_menu_item.dart';
@@ -70,8 +72,10 @@ class ContextMenuAction {
     this.title,
     this.subtitle,
     this.onTap,
-  }) : assert(icon != null || title != null,
-            'Either icon or title should be provided');
+  }) : assert(
+          icon != null || title != null,
+          Api.contextMenuException,
+        );
 
   final String? title;
   final String? subtitle;

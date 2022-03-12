@@ -1,5 +1,6 @@
-import 'package:bike_catalog/theme/theme.dart';
 import 'package:flutter/material.dart';
+
+import 'package:bike_catalog/theme/theme.dart';
 
 class LineDivider extends StatelessWidget {
   const LineDivider({
@@ -18,7 +19,7 @@ class LineDivider extends StatelessWidget {
 
   factory LineDivider.horizontal({
     Axis orientation = Axis.horizontal,
-    double thickness = 1.0,
+    double thickness = defaultThickness,
     double? height,
     Color? color,
   }) {
@@ -32,7 +33,7 @@ class LineDivider extends StatelessWidget {
 
   factory LineDivider.vertical({
     Axis orientation = Axis.vertical,
-    double thickness = 1.0,
+    double thickness = defaultThickness,
     double? width,
     Color? color,
   }) {
@@ -49,6 +50,8 @@ class LineDivider extends StatelessWidget {
   final double? _width;
   final double? _height;
   final Color? _color;
+
+  static const defaultThickness = 1.0;
 
   @override
   Widget build(BuildContext context) {

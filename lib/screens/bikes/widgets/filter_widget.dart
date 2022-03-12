@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:bike_catalog/constants/constants.dart';
-import 'package:bike_catalog/models/bike_enums.dart';
-import 'package:bike_catalog/models/filter.dart';
+import 'package:bike_catalog/models/models.dart';
 import 'package:bike_catalog/theme/theme.dart';
 import 'package:bike_catalog/ui_kit/ui_kit.dart';
 
