@@ -4,9 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bike_catalog/base/base.dart';
 import 'package:bike_catalog/constants/constants.dart';
 import 'package:bike_catalog/models/bike.dart';
+import 'package:bike_catalog/models/bike_enums.dart';
 import 'package:bike_catalog/screens/bikes/bikes_screen_m.dart';
 import 'package:bike_catalog/screens/bikes/bikes_screen_vm.dart';
-import 'package:bike_catalog/screens/splash/splash_screen_m.dart';
+import 'package:bike_catalog/screens/bikes/widgets/filter_widget.dart';
 import 'package:bike_catalog/theme/theme.dart';
 import 'package:bike_catalog/ui_kit/helpers/dialog_helper.dart';
 import 'package:bike_catalog/ui_kit/ui_kit.dart' as ui_kit;
@@ -31,7 +32,10 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
             body: (state is Loading)
                 ? const ui_kit.Loading()
                 : _buildScreenBody(
-                    appTheme: appTheme, state: state, context: context),
+                    appTheme: appTheme,
+                    state: state,
+                    context: context,
+                  ),
           ),
         );
       },
@@ -70,7 +74,10 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
             const ui_kit.Label(Strings.filter),
             IconButton(
               onPressed: () {
-                _showFilterDialog(context: context);
+                _showFilterDialog(
+                  context: context,
+                  state: state,
+                );
               },
               icon: const Icon(Icons.filter_alt_outlined),
             ),
@@ -101,22 +108,22 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
           ui_kit.ContextMenuAction(
               title: Strings.highestPrice,
               onTap: () {
-                viewModel.sort(sortType: SortType.priceASC);
+                viewModel.sort(sortType: BikeSortType.priceASC);
               }),
           ui_kit.ContextMenuAction(
               title: Strings.lowestPrice,
               onTap: () {
-                viewModel.sort(sortType: SortType.priceDES);
+                viewModel.sort(sortType: BikeSortType.priceDES);
               }),
           ui_kit.ContextMenuAction(
               title: Strings.alphabetically,
               onTap: () {
-                viewModel.sort(sortType: SortType.alphabetically);
+                viewModel.sort(sortType: BikeSortType.alphabetically);
               }),
           ui_kit.ContextMenuAction(
               title: Strings.year,
               onTap: () {
-                viewModel.sort(sortType: SortType.year);
+                viewModel.sort(sortType: BikeSortType.year);
               }),
         ],
         icon: const Icon(Icons.sort),
@@ -130,11 +137,13 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
         flex: _listFlex,
         child: state is Loaded
             ? _buildListView(
-                bikes: state.bikes,
+                bikes: state.filterMode ? state.filteredBikes : state.bikes,
                 context: context,
               )
             : _buildListView(
-                bikes: (state as Search).foundBikes,
+                bikes: (state as Search).filterMode
+                    ? state.filteredBikes
+                    : state.foundBikes,
                 context: context,
               ));
   }
@@ -145,16 +154,13 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
   }) =>
       bikes.isEmpty
           ? const ui_kit.EmptyIndicator()
-          : RefreshIndicator(
-              onRefresh: () => viewModel.loadBikes(context),
-              child: ListView.builder(
-                physics: const AlwaysScrollableScrollPhysics(),
-                itemCount: bikes.length,
-                itemBuilder: (context, index) {
-                  final foundBike = bikes[index];
-                  return _cardItem(foundBike);
-                },
-              ),
+          : ListView.builder(
+              physics: const AlwaysScrollableScrollPhysics(),
+              itemCount: bikes.length,
+              itemBuilder: (context, index) {
+                final foundBike = bikes[index];
+                return _cardItem(foundBike);
+              },
             );
 
   Widget _cardItem(Bike bike) => ui_kit.CardItem(
@@ -186,71 +192,26 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
       );
 
   String _getSearchValue(BikesScreenState state) =>
-      state is Loaded || state is Initialized
-          ? ''
-          : (state as Search).searchKey;
+      state is Search ? state.searchKey : '';
 
-  Future<void> _showFilterDialog({required BuildContext context}) async {
-    final categoryChips = <Widget>[];
-    for (var category in BikeCategory.values) {
-      categoryChips.add(
-        Padding(
-          padding: const EdgeInsets.all(3.0),
-          child: ui_kit.ReactiveChip(
-            label: category.name,
-          ),
-        ),
-      );
-    }
-    final sizeChips = <Widget>[];
-    for (var size in BikeSize.values) {
-      sizeChips.add(
-        Padding(
-          padding: const EdgeInsets.all(3.0),
-          child: ui_kit.ReactiveChip(
-            label: size.name,
-          ),
-        ),
-      );
-    }
+  Future<void> _showFilterDialog({
+    required BuildContext context,
+    required BikesScreenState state,
+  }) async {
+    final currentFilter = viewModel.getFilter();
     DialogHelper.show(
       barrierLabel: Strings.filter,
       context: context,
       title: Strings.filter,
-      body: Padding(
-        padding: const EdgeInsets.all(8),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const ui_kit.Label(
-              'Select Category',
-              typography: TypographyFamily.headline7,
-            ),
-            Wrap(
-              children: [...categoryChips],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            const ui_kit.Label(
-              'Select Price',
-              typography: TypographyFamily.headline7,
-            ),
-            const ui_kit.CustomRangeSlider(),
-            SizedBox(
-              height: 20,
-            ),
-            const ui_kit.Label(
-              'Select Size',
-              typography: TypographyFamily.headline7,
-            ),
-            Wrap(
-              children: [...sizeChips],
-            ),
-          ],
-        ),
+      body: FilterWidget(
+        filter: currentFilter,
+        onChange: (newFilter) {
+          viewModel.updateFilter(newFilter);
+        },
       ),
       maxHeight: 600,
+    ).then(
+      (value) => viewModel.updateBikes(),
     );
   }
 }

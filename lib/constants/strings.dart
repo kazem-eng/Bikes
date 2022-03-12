@@ -14,4 +14,7 @@ abstract class Strings {
   static const search = 'Search';
   static const description = 'Description';
   static const addToBasket = 'Add to basket';
+  static const categorySelection = 'Select Category';
+  static const priceSelection = 'Select Price';
+  static const sizeSelection = 'Select Size';
 }

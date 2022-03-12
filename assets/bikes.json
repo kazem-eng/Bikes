@@ -15,32 +15,6 @@
             "https://www.sefiles.net/images/library/large/trek-farley-5-381306-18.png"
         ],
         "size": "Medium",
-        "colors": [
-            "black",
-            "red",
-            "blue"
-        ],
-        "year": 2022
-    },
-    {
-        "id": "12345",
-        "brand": "yeticycles",
-        "name": "ARC T-Series C1",
-        "description": "THE ARC IS BACK. CONJURING UP ALL THE NOSTALGIA, HOOTS AND HOLLARS FROM YESTERYEAR. IT'S YOUR INSTANT-FEEDBACK STEED FOR ANY TRAIL. SHOW IT YOUR SINGLETRACK, PUMP TRACK AND YOUR BIKEPACK ROUTE TOO. IT'S GOT HISTORY TO LIVE UP TO AND NEW HISTORY TO MAKE. AND IT'S ALREADY IMPATIENT.",
-        "category": "Mountain",
-        "price": 5300.00,
-        "thubmnail": "https://www.sefiles.net/merchant/850/images/small/2022_YetiCycles_ARC_C1_Turq2.png",
-        "images": [
-            "https://www.sefiles.net/merchant/850/images/large/2022_YetiCycles_ARC_C1_Turq.png",
-            "https://www.sefiles.net/merchant/850/images/large/2022_YetiCycles_ARC_C1_Turq1.png",
-            "https://www.sefiles.net/merchant/850/images/small/2022_YetiCycles_ARC_C1_Turq2.png"
-        ],
-        "size": "Small",
-        "colors": [
-            "green",
-            "black",
-            "yellow"
-        ],
         "year": 2022
     },
     {
@@ -58,10 +32,6 @@
             "https://www.sefiles.net/images/library/large/trek-marlin-8-391121-112.png"
         ],
         "size": "Large",
-        "colors": [
-            "black",
-            "white"
-        ],
         "year": 2021
     },
     {
@@ -78,10 +48,22 @@
             "https://images.giant-bicycles.com/b_white,c_pad,h_650,q_80/au93m2pwo73ur6fsqlii/MY21TCXADVPro1_ColorACarbon_Road-8.jpg"
         ],
         "size": "Large",
-        "colors": [
-            "black",
-            "red"
+        "year": 2022
+    },
+    {
+        "id": "12345",
+        "brand": "yeticycles",
+        "name": "ARC T-Series C1",
+        "description": "THE ARC IS BACK. CONJURING UP ALL THE NOSTALGIA, HOOTS AND HOLLARS FROM YESTERYEAR. IT'S YOUR INSTANT-FEEDBACK STEED FOR ANY TRAIL. SHOW IT YOUR SINGLETRACK, PUMP TRACK AND YOUR BIKEPACK ROUTE TOO. IT'S GOT HISTORY TO LIVE UP TO AND NEW HISTORY TO MAKE. AND IT'S ALREADY IMPATIENT.",
+        "category": "Mountain",
+        "price": 5300.00,
+        "thubmnail": "https://www.sefiles.net/merchant/850/images/large/2022_YetiCycles_ARC_C1_Turq1.png",
+        "images": [
+            "https://www.sefiles.net/merchant/850/images/large/2022_YetiCycles_ARC_C1_Turq.png",
+            "https://www.sefiles.net/merchant/850/images/large/2022_YetiCycles_ARC_C1_Turq1.png",
+            "https://www.sefiles.net/merchant/850/images/small/2022_YetiCycles_ARC_C1_Turq2.png"
         ],
+        "size": "Small",
         "year": 2022
     },
     {
@@ -98,11 +80,6 @@
             "https://assets.specialized.com/i/specialized/TRBO-983__PDP_Product-Carousel_3840x1280_DoveGray_Hero?bg=rgb(241,241,241)&w=2500&h=1406&fmt=auto"
         ],
         "size": "Large",
-        "colors": [
-            "green",
-            "black",
-            "yellow"
-        ],
         "year": 2021
     },
     {
@@ -121,10 +98,6 @@
             "https://s14761.pcdn.co/wp-content/uploads/sites/3/2021/04/Cervelo-Caledonia-5-2021-Test-Review-281-600x400.jpg"
         ],
         "size": "Small",
-        "colors": [
-            "grey",
-            "orange"
-        ],
         "year": 2022
     },
     {
@@ -143,11 +116,6 @@
             "https://www.sefiles.net/images/library/large/trek-verve-copy-365895-15.jpg"
         ],
         "size": "Large",
-        "colors": [
-            "black",
-            "red",
-            "blue"
-        ],
         "year": 2021
     },
     {
@@ -166,10 +134,6 @@
             "https://www.sefiles.net/images/library/large/trek-rail-9.7-402181-15.jpg"
         ],
         "size": "Medium",
-        "colors": [
-            "black",
-            "red"
-        ],
         "year": 2022
     },
     {
@@ -188,11 +152,6 @@
             "https://trek.scene7.com/is/image/TrekBicycleProducts/DomanePlusLT7US_20_32577_C_Alt5?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440"
         ],
         "size": "Large",
-        "colors": [
-            "green",
-            "black",
-            "yellow"
-        ],
         "year": 2020
     },
     {
@@ -210,11 +169,6 @@
             "https://www.sefiles.net/images/library/large/trek-dual-sport-3-397045-111.jpg"
         ],
         "size": "Large",
-        "colors": [
-            "green",
-            "black",
-            "yellow"
-        ],
         "year": 2018
     },
     {
@@ -231,10 +185,6 @@
             "https://cdn.shopify.com/s/files/1/0532/7139/6534/products/cannondale-adv-2-blu-22_hr_1800x1800.jpg?v=1644317756"
         ],
         "size": "Small",
-        "colors": [
-            "black",
-            "white"
-        ],
         "year": 2019
     },
     {
@@ -252,11 +202,6 @@
             "https://trek.scene7.com/is/image/TrekBicycleProducts/AllantPlus99S_22_35030_A_Alt8?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440"
         ],
         "size": "Medium",
-        "colors": [
-            "black",
-            "red",
-            "blue"
-        ],
         "year": 2020
     },
     {
@@ -273,10 +218,6 @@
             "https://cd.bike-discount.de/media/image/0b/6a/3b/559110_D3_800x800.jpg"
         ],
         "size": "Small",
-        "colors": [
-            "black",
-            "white"
-        ],
         "year": 2022
     },
     {
@@ -293,11 +234,6 @@
             "https://cd.bike-discount.de/media/image/f1/13/cd/Puky-CYKE-16-F-1_800x800.jpg"
         ],
         "size": "Small",
-        "colors": [
-            "green",
-            "black",
-            "yellow"
-        ],
         "year": 2022
     },
     {
@@ -312,11 +248,6 @@
             "https://cd.bike-discount.de/media/image/9f/bc/8b/Cruzee-rot.jpg"
         ],
         "size": "Small",
-        "colors": [
-            "black",
-            "red",
-            "blue"
-        ],
         "year": 2018
     }
 ]

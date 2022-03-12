@@ -5,14 +5,17 @@ import 'package:flutter/material.dart';
 class ReactiveChip extends StatefulWidget {
   const ReactiveChip({
     required String label,
+    void Function(bool)? onSelected,
     bool? isSelected,
     Key? key,
   })  : _label = label,
         _isSelected = isSelected,
+        _onSelected = onSelected,
         super(key: key);
 
   final String _label;
   final bool? _isSelected;
+  final void Function(bool)? _onSelected;
 
   @override
   State<ReactiveChip> createState() => _ReactiveChipState();
@@ -35,6 +38,7 @@ class _ReactiveChipState extends State<ReactiveChip> {
         setState(() {
           isSelected = value;
         });
+        widget._onSelected?.call(value);
       },
       selectedColor: Colors.green,
       selected: isSelected,
