@@ -168,11 +168,13 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
         subtitle: bike.name,
         titleSuffix: bike.year.toString(),
         imageURL: bike.thubmnail,
+        subtitlePrefix: bike.size,
         addOnIcon: _buildAddOnIcon(bike),
         onTap: () {
           viewModel.onBikeSelection(selectedBike: bike);
         },
       );
+
   Widget _buildAddOnIcon(Bike bike) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

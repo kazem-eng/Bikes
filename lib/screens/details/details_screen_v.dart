@@ -65,6 +65,10 @@ class DetailsScreen extends BaseView<DetailsScreenViewModel> {
             _bikeDetails.name,
             typography: TypographyFamily.headline5,
           ),
+          Label(
+            _bikeDetails.year.toString(),
+            typography: TypographyFamily.body2,
+          ),
           _verticalSpacer,
           SizedBox(
             height: screenSize.height * 0.3,
@@ -78,6 +82,8 @@ class DetailsScreen extends BaseView<DetailsScreenViewModel> {
                 style: appTheme.typographies.robotoFontFamily.headline6
                     .copyWith(color: Colors.red),
               ),
+              const Spacer(),
+              HeroAvatar.mediumText(text: _bikeDetails.size)
             ],
           ),
           _verticalSpacer,

@@ -12,6 +12,7 @@ class CardItem extends StatelessWidget {
     Function()? onTap,
     String? imageURL,
     String? titleSuffix,
+    String? subtitlePrefix,
     Widget? trailingWidget,
     Widget? addOnIcon,
     Key? key,
@@ -22,11 +23,13 @@ class CardItem extends StatelessWidget {
         _titleSuffix = titleSuffix,
         _trailingWidget = trailingWidget,
         _addOnIcon = addOnIcon,
+        _subtitlePrefix = subtitlePrefix,
         super(key: key);
 
   final String _title;
   final String? _titleSuffix;
   final String _subtitle;
+  final String? _subtitlePrefix;
   final String? _imageURL;
   final Function()? _onTap;
   final Widget? _trailingWidget;
@@ -78,9 +81,16 @@ class CardItem extends StatelessWidget {
                             _title,
                             typography: TypographyFamily.caption,
                           ),
-                          subtitle: Label(
-                            _subtitle,
-                          ),
+                          subtitle: _subtitlePrefix != null
+                              ? Wrap(
+                                  crossAxisAlignment: WrapCrossAlignment.center,
+                                  children: [
+                                    HeroAvatar.smallText(text: _subtitlePrefix),
+                                    SizedBox(width: 5),
+                                    Label(_subtitle),
+                                  ],
+                                )
+                              : Label(_subtitle),
                           trailing: _trailingWidget ??
                               const Icon(Icons.keyboard_arrow_right),
                         ),
@@ -93,7 +103,9 @@ class CardItem extends StatelessWidget {
                   alignment: Alignment.topRight,
                   child: Container(
                     margin: const EdgeInsets.symmetric(
-                        vertical: 4.0, horizontal: 6),
+                      vertical: 4.0,
+                      horizontal: 6,
+                    ),
                     child: Label(
                       _titleSuffix ?? '',
                       style: const TextStyle(
