@@ -6,9 +6,8 @@ Mobile solution for a bike catalog with bike detail view.
 
 Please follow below steps:
 
-- Download and install Flutter sdk
-- More info and help [here](https://docs.flutter.dev/get-started/install)
-- Download and install IDE (vs code is recommended)
+- Download and install Flutter sdk More info [here](https://docs.flutter.dev/get-started/install)
+- Download and install IDE (vscode is recommended)
 - Open the project
 - Run following commands:
   - flutter pub get ( to download required packages)
@@ -32,6 +31,6 @@ Following principles are followed:
 - MVVM pattern for screens
 - Injection pattern for dependencies and instantiation
 - SOLID principles
-- Latest Flutter coding style, conventions and lints
+- Latest Flutter coding style, conventions and lints. Enforced rules can be found [here](analysis_options.yaml)
 
 more detailed information can be found [here](https://miro.com/app/board/uXjVOUqXTnc=/?invite_link_id=218787102528)
