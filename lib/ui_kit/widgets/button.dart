@@ -71,6 +71,28 @@ class Button extends StatelessWidget {
       isBusy: isBusy ?? false,
     );
   }
+  factory Button.plain({
+    required String title,
+    ButtonStyleType? styleType,
+    dynamic Function()? onTap,
+    bool? isEnable,
+    bool? isBusy,
+    double? width,
+    double? height,
+    IconData? icon,
+  }) {
+    return Button(
+      buttonType: ButtonType.button,
+      styleType: styleType ?? ButtonStyleType.plain,
+      onTap: onTap,
+      title: title,
+      icon: icon,
+      width: width,
+      height: height,
+      isEnable: isEnable ?? true,
+      isBusy: isBusy ?? false,
+    );
+  }
 
   factory Button.icon({
     required IconData icon,
@@ -205,12 +227,12 @@ class Button extends StatelessWidget {
         : Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
+              buttonText,
               if (_icon != null)
                 Container(
                   margin: iconMargin,
                   child: Icon(_icon!),
                 ),
-              buttonText,
             ],
           );
   }

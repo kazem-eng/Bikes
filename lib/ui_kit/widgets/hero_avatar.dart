@@ -109,6 +109,17 @@ class HeroAvatar extends StatelessWidget {
         backgroundColor: backgroundColor,
       );
 
+  factory HeroAvatar.avatar({
+    required String imageAsset,
+    Color? backgroundColor,
+  }) =>
+      HeroAvatar(
+        heroType: HeroType.avatar,
+        heroSize: HeroSize.medium,
+        imageAsset: imageAsset,
+        backgroundColor: backgroundColor,
+      );
+
   final String? _imageAsset;
   final String? _imageURL;
   final String? _text;
@@ -152,7 +163,7 @@ class HeroAvatar extends StatelessWidget {
       case HeroType.icon:
         return Center(child: _icon!);
       case HeroType.avatar:
-        return Center(child: _icon!);
+        return null;
     }
   }
 

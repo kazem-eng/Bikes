@@ -72,19 +72,23 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(
-                    left: 10.0, right: 18, top: 18, bottom: 18),
+                  left: 10.0,
+                  right: 18,
+                  top: 18,
+                  bottom: 18,
+                ),
                 child: Image.asset(Resources.internetStoreLogo),
               ),
               const Spacer(),
-              const ui_kit.Label(Strings.filter),
-              IconButton(
-                onPressed: () {
+              ui_kit.Button.plain(
+                onTap: () {
                   _showFilterDialog(
                     context: context,
                     state: state,
                   );
                 },
-                icon: const Icon(Icons.filter_alt_outlined),
+                title: Strings.filter,
+                icon: Icons.filter_alt_outlined,
               ),
               const ui_kit.Label(Strings.sort),
               _buildSortContextMenu(),
@@ -146,6 +150,7 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
         titleSuffix: bike.year.toString(),
         imageURL: bike.thubmnail,
         subtitlePrefix: bike.size,
+        subtitlePostfix: bike.category,
         addOnIcon: _buildAddOnIcon(bike),
         onTap: () {
           viewModel.onBikeSelection(selectedBike: bike);

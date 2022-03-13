@@ -13,6 +13,7 @@ class CardItem extends StatelessWidget {
     String? imageURL,
     String? titleSuffix,
     String? subtitlePrefix,
+    String? subtitlePostfix,
     Widget? trailingWidget,
     Widget? addOnIcon,
     Key? key,
@@ -24,12 +25,14 @@ class CardItem extends StatelessWidget {
         _trailingWidget = trailingWidget,
         _addOnIcon = addOnIcon,
         _subtitlePrefix = subtitlePrefix,
+        _subtitlePostfix = subtitlePostfix,
         super(key: key);
 
   final String _title;
   final String? _titleSuffix;
   final String _subtitle;
   final String? _subtitlePrefix;
+  final String? _subtitlePostfix;
   final String? _imageURL;
   final Function()? _onTap;
   final Widget? _trailingWidget;
@@ -105,6 +108,13 @@ class CardItem extends StatelessWidget {
                       HeroAvatar.smallText(text: _subtitlePrefix),
                       const SizedBox(width: 5),
                       Label(_subtitle),
+                      Label(
+                        ' - $_subtitlePostfix',
+                        style: appTheme.typographies.robotoFontFamily.button
+                            .copyWith(
+                          color: appTheme.colors.subtitleText,
+                        ),
+                      ),
                     ],
                   )
                 : Label(_subtitle),

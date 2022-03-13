@@ -7,18 +7,15 @@ Mobile solution for a bike catalog with bike detail view.
 Please follow below steps:
 
 - Download and install Flutter sdk
-- More info and help : https://docs.flutter.dev/get-started/install
+- More info and help [here](https://docs.flutter.dev/get-started/install)
 - Download and install IDE (vs code is recommended)
 - Open the project
 - Run following commands:
   - flutter pub get ( to download required packages)
   - flutter packages pub run build_runner build --delete-conflicting-outputs ( to generate files and codes required for project)
-- Select a target device such as android-iphone emulator or real device
-  - use following links for help if needed:
-    - https://docs.flutter.dev/get-started/test-drive
-    - https://developer.android.com/studio/run/managing-avds
+- Select a target device such as android-iphone emulator or real device.follow [here](https://docs.flutter.dev/get-started/test-drive) and [here](https://developer.android.com/studio/run/managing-avds) if help is needed:
 - flutter run (to run the project)
-  - for more info on flutter cli : https://docs.flutter.dev/reference/flutter-cli
+  - for more info on flutter cli [here](https://docs.flutter.dev/reference/flutter-cli)
 
 ### Release info
 
@@ -26,9 +23,7 @@ Please follow below steps:
   - flutter build apk --release
 - ios :
   - flutter build ipa --release
-- more info on :
-  - https://docs.flutter.dev/deployment/ios
-  - https://docs.flutter.dev/deployment/android
+- more info [ios](https://docs.flutter.dev/deployment/ios) and [android](https://docs.flutter.dev/deployment/android)
 
 ### Architecture
 
@@ -38,3 +33,5 @@ Following principles are followed:
 - Injection pattern for dependencies and instantiation
 - SOLID principles
 - Latest Flutter coding style, conventions and lints
+
+more detailed information can be found [here](https://miro.com/app/board/uXjVOUqXTnc=/?invite_link_id=218787102528)

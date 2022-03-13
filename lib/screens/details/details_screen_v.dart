@@ -57,7 +57,7 @@ class DetailsScreen extends BaseView<DetailsScreenViewModel> {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: ListView(
         children: [
-          ..._buildDetailsHeader(),
+          ..._buildDetailsHeader(appTheme),
           ..._buildSlider(context),
           ..._buildPrice(appTheme),
           ..._buildDescription(),
@@ -66,7 +66,7 @@ class DetailsScreen extends BaseView<DetailsScreenViewModel> {
     );
   }
 
-  List<Widget> _buildDetailsHeader() => [
+  List<Widget> _buildDetailsHeader(IAppThemeData appTheme) => [
         Label(
           _bikeDetails.brand,
           typography: TypographyFamily.caption,
@@ -76,7 +76,7 @@ class DetailsScreen extends BaseView<DetailsScreenViewModel> {
           typography: TypographyFamily.headline5,
         ),
         Label(
-          _bikeDetails.year.toString(),
+          '${_bikeDetails.year.toString()}  -  ${_bikeDetails.category}',
           typography: TypographyFamily.body2,
         ),
         _verticalSpacer,
@@ -123,5 +123,8 @@ class DetailsScreen extends BaseView<DetailsScreenViewModel> {
           textAlign: TextAlign.justify,
         ),
         const Spacer(),
+        Button.button(
+          title: Strings.addToBasket,
+        )
       ];
 }
