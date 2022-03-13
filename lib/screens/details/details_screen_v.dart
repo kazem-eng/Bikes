@@ -124,10 +124,13 @@ class DetailsScreen extends BaseView<DetailsScreenViewModel> {
           textAlign: TextAlign.justify,
         ),
         const Spacer(),
-        Button.button(
-          title: Strings.addToBasket,
-          onTap: () {},
-          width: double.infinity,
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: Button.button(
+            title: Strings.addToBasket,
+            onTap: () {},
+            width: double.infinity,
+          ),
         )
       ];
 }

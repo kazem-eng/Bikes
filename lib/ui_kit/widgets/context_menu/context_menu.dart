@@ -11,23 +11,36 @@ class ContextMenu extends StatelessWidget {
   const ContextMenu({
     required List<ContextMenuAction> actions,
     Icon? icon,
+    String? title,
     Key? key,
   })  : _actions = actions,
         _icon = icon,
+        _title = title,
         super(key: key);
 
   final List<ContextMenuAction> _actions;
   final Icon? _icon;
+  final String? _title;
+
   static const _menuItemHorizontalPadding = 18.0;
   static const _menuMargin = 10.0;
+  static const _menuPadding = 8.0;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(right: _menuMargin),
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(_menuPadding),
       child: PopupMenuButton(
-        child: _icon ?? const Icon(Icons.more_vert),
+        child: Row(
+          children: [
+            Label(_title ?? ''),
+            const SizedBox(
+              width: _menuPadding,
+            ),
+            _icon ?? const Icon(Icons.more_vert),
+          ],
+        ),
         itemBuilder: (_) {
           return _buildItemList();
         },

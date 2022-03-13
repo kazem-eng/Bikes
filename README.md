@@ -16,6 +16,8 @@ Please follow below steps:
 - flutter run (to run the project)
   - for more info on flutter cli [here](https://docs.flutter.dev/reference/flutter-cli)
 
+\*\*Please make sure that your phone/emulator is connected to the internet so taht you are be able to see(download) the pictures
+
 ### Release info
 
 - android :

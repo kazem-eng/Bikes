@@ -131,10 +131,9 @@ class Button extends StatelessWidget {
     final isDisabled = _isBusy || !_isEnable || _onTap == null;
     final VoidCallback? onPressed = isDisabled ? null : _onTap;
 
-    return Container(
+    return SizedBox(
       width: _width,
       height: _height ?? _defaultHeight,
-      margin: const EdgeInsets.symmetric(vertical: 12),
       child: _buildButton(
         appTheme: appTheme,
         isDisabled: isDisabled,

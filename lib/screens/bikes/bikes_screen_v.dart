@@ -18,6 +18,7 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
 
   static const _listFlex = 10;
   static const _toolbarMargin = 2.0;
+  static const _dialogMaxHeight = 600.0;
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +91,6 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
                 title: Strings.filter,
                 icon: Icons.filter_alt_outlined,
               ),
-              const ui_kit.Label(Strings.sort),
               _buildSortContextMenu(),
             ],
           ),
@@ -98,6 +98,8 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
       );
 
   Widget _buildSortContextMenu() => ui_kit.ContextMenu(
+        title: Strings.sort,
+        icon: const Icon(Icons.sort),
         actions: [
           ui_kit.ContextMenuAction(
               title: Strings.highestPrice,
@@ -115,7 +117,6 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
                 viewModel.sort(sortType: BikeSortType.alphabetically);
               }),
         ],
-        icon: const Icon(Icons.sort),
       );
 
   Widget _buildBikeList({
@@ -189,7 +190,7 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
           viewModel.updateFilter(newFilter);
         },
       ),
-      maxHeight: 600,
+      maxHeight: _dialogMaxHeight,
     ).then(
       (value) => viewModel.filterBikes(),
     );
