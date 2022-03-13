@@ -56,6 +56,7 @@ class DetailsScreen extends BaseView<DetailsScreenViewModel> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ..._buildDetailsHeader(appTheme),
           ..._buildSlider(context),
