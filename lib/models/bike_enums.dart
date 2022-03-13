@@ -1,7 +1,6 @@
 enum BikeSortType {
   priceASC,
   priceDES,
-  year,
   alphabetically,
 }
 

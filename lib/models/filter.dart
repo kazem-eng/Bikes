@@ -12,7 +12,7 @@ class BikeFilter {
   factory BikeFilter.empty() => BikeFilter(
         categories: {},
         sizes: {},
-        prices: RangeValues(0, 10000),
+        prices: defaultRange,
       );
 
   BikeFilter copyWith({
@@ -31,9 +31,9 @@ class BikeFilter {
   final Set<BikeSize> sizes;
   final RangeValues prices;
 
+  static const defaultRange = RangeValues(0, 10000);
+
   bool get isEmpty {
-    return categories.isEmpty &&
-        sizes.isEmpty &&
-        prices == RangeValues(0, 10000);
+    return categories.isEmpty && sizes.isEmpty && prices == defaultRange;
   }
 }

@@ -6,7 +6,6 @@ import 'package:bike_catalog/ui_kit/ui_kit.dart';
 enum ButtonType {
   button,
   icon,
-  fab,
 }
 enum ButtonStyleType {
   fill,
@@ -73,44 +72,6 @@ class Button extends StatelessWidget {
     );
   }
 
-  factory Button.fab({
-    required IconData icon,
-    ButtonStyleType? styleType,
-    dynamic Function()? onTap,
-    bool? isEnable,
-    bool? isBusy,
-  }) {
-    return Button(
-      buttonType: ButtonType.fab,
-      styleType: styleType ?? ButtonStyleType.fill,
-      icon: icon,
-      onTap: onTap,
-      width: _fabSize,
-      height: _fabSize,
-      isEnable: isEnable ?? true,
-      isBusy: isBusy ?? false,
-    );
-  }
-
-  factory Button.smallFab({
-    required IconData icon,
-    ButtonStyleType? styleType,
-    dynamic Function()? onTap,
-    bool? isEnable,
-    bool? isBusy,
-  }) {
-    return Button(
-      buttonType: ButtonType.fab,
-      styleType: styleType ?? ButtonStyleType.fill,
-      onTap: onTap,
-      icon: icon,
-      width: _smallFabSize,
-      height: _smallFabSize,
-      isEnable: isEnable ?? true,
-      isBusy: isBusy ?? false,
-    );
-  }
-
   factory Button.icon({
     required IconData icon,
     dynamic Function()? onTap,
@@ -140,8 +101,6 @@ class Button extends StatelessWidget {
   final double? _height;
   final double? _width;
 
-  static const _smallFabSize = 40.0;
-  static const _fabSize = 56.0;
   static const _defaultHeight = 48.0;
 
   @override
@@ -169,12 +128,6 @@ class Button extends StatelessWidget {
     switch (_buttonType) {
       case ButtonType.button:
         return _buttonBuilder(
-          appTheme: appTheme,
-          isDisabled: isDisabled,
-          onPressed: onPressed,
-        );
-      case ButtonType.fab:
-        return _fabButtonBuilder(
           appTheme: appTheme,
           isDisabled: isDisabled,
           onPressed: onPressed,
@@ -217,40 +170,6 @@ class Button extends StatelessWidget {
         appTheme: appTheme,
         isDisabled: isDisabled,
       ),
-      style: _style ?? buttonStyle,
-    );
-  }
-
-  Widget _fabButtonBuilder({
-    required IAppThemeData appTheme,
-    required bool isDisabled,
-    required Function()? onPressed,
-  }) {
-    final ButtonStyle buttonStyle;
-    switch (_styleType) {
-      case ButtonStyleType.fill:
-        buttonStyle = isDisabled
-            ? appTheme.disabledFabFilledButtonStyle
-            : appTheme.fabFilledButtonStyle;
-        break;
-      case ButtonStyleType.outline:
-        buttonStyle = isDisabled
-            ? appTheme.disabledFabOutlinedButtonStyle
-            : appTheme.fabOutlinedButtonStyle;
-        break;
-      case ButtonStyleType.plain:
-        buttonStyle = isDisabled
-            ? appTheme.disabledFabPlainButtonStyle
-            : appTheme.fabPlainButtonStyle;
-        break;
-      default:
-        buttonStyle = isDisabled
-            ? appTheme.disabledFabFilledButtonStyle
-            : appTheme.fabFilledButtonStyle;
-    }
-    return ElevatedButton(
-      onPressed: onPressed,
-      child: _iconChild(),
       style: _style ?? buttonStyle,
     );
   }

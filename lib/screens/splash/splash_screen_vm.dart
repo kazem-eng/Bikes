@@ -9,15 +9,16 @@ class SplashScreenViewModel extends BaseViewModel<SplashScreenState> {
   SplashScreenViewModel({
     required INavigationService navigationService,
   })  : _navigationService = navigationService,
-        super(const Initialized());
+        super(const Loading());
 
   final INavigationService _navigationService;
 
   static const _navigationDelay = 2;
 
   void navigateToLogin() {
-    Future.delayed(const Duration(seconds: _navigationDelay), () {
-      _navigationService.replace(route: BikesRoute());
-    });
+    Future.delayed(
+      const Duration(seconds: _navigationDelay),
+      () => _navigationService.replace(route: BikesRoute()),
+    );
   }
 }

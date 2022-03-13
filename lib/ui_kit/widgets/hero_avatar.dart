@@ -146,11 +146,13 @@ class HeroAvatar extends StatelessWidget {
       );
 
   Widget? _buildChild(IAppThemeData appTheme) {
-    if (_heroType == HeroType.text) {
-      return _builHeroText(appTheme);
-    }
-    if (_heroType == HeroType.icon) {
-      return Center(child: _icon!);
+    switch (_heroType) {
+      case HeroType.text:
+        return _builHeroText(appTheme);
+      case HeroType.icon:
+        return Center(child: _icon!);
+      case HeroType.avatar:
+        return Center(child: _icon!);
     }
   }
 
@@ -159,6 +161,8 @@ class HeroAvatar extends StatelessWidget {
       return AssetImage(_imageAsset!);
     } else if (_heroType == HeroType.avatar && _imageURL != null) {
       return NetworkImage(_imageURL!);
+    } else {
+      return const NetworkImage('');
     }
   }
 

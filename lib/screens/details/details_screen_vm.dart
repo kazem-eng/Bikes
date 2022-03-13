@@ -8,7 +8,5 @@ import 'package:bike_catalog/screens/details/details_screen_m.dart';
 class DetailsScreenViewModel extends BaseViewModel<DetailsScreenState> {
   DetailsScreenViewModel() : super(const Initializing());
 
-  void loadBikeDetails({required Bike bikeDetails}) {
-    emit(Loaded(bikeDetails));
-  }
+  void loadBikeDetails(Bike bikeDetails) => emit(Loaded(bikeDetails));
 }

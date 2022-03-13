@@ -62,37 +62,6 @@ MaterialStateProperty<MouseCursor?>? _disabledButtonsMouseCursorBuilder() =>
       },
     );
 
-MaterialStateProperty<OutlinedBorder?>? _fabButtonShapeBuilder(borderRadius) =>
-    MaterialStateProperty.all<RoundedRectangleBorder>(
-      RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(borderRadius),
-      ),
-    );
-
-MaterialStateProperty<RoundedRectangleBorder?>? _fabOutlinedButtonShapeBuilder({
-  required Color borderColor,
-  required Color hoverBorderColor,
-  required double hoverBorderWidth,
-  required double borderRadius,
-}) =>
-    MaterialStateProperty.resolveWith(
-      (states) {
-        if (states.contains(MaterialState.hovered)) {
-          return RoundedRectangleBorder(
-            side: BorderSide(
-              width: hoverBorderWidth,
-              color: borderColor,
-            ),
-            borderRadius: BorderRadius.circular(borderRadius),
-          );
-        }
-        return RoundedRectangleBorder(
-          side: BorderSide(color: hoverBorderColor),
-          borderRadius: BorderRadius.circular(borderRadius),
-        );
-      },
-    );
-
 MaterialStateProperty<double?>? _buttonElevationBuilder(
   double elevation,
 ) =>

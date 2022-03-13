@@ -1,6 +1,4 @@
 abstract class Strings {
-  static const emptyList = 'Empty List...';
-
   static const currenctyIndicator = '\$ ';
 
   //sort options

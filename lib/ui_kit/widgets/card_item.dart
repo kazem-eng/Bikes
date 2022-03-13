@@ -38,13 +38,18 @@ class CardItem extends StatelessWidget {
   static const _cardMargin = 10.0;
   static const _cardHeight = 320.0;
   static const _footerHeight = 60.0;
+  static const _imagepadding = 20.0;
 
   @override
   Widget build(BuildContext context) {
     final appTheme = AppTheme.of(context).theme;
     return InkWell(
       onTap: _onTap,
-      child: SizedBox(
+      child: _buildCardContainer(appTheme),
+    );
+  }
+
+  Widget _buildCardContainer(IAppThemeData appTheme) => SizedBox(
         height: _cardHeight,
         child: Container(
           margin: const EdgeInsets.all(_cardMargin),
@@ -56,68 +61,69 @@ class CardItem extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Expanded(
-                      flex: 6,
-                      child: Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: CachedNetworkImage(
-                          imageUrl: _imageURL ?? Api.placeholederURL,
-                          placeholder: (context, url) => Image.asset(
-                            Resources.bikePlaceHolder,
-                          ),
-                          errorWidget: (context, url, error) =>
-                              const Icon(Icons.error),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        height: _footerHeight,
-                        color: appTheme.colors.secondaryLight.withOpacity(0.5),
-                        padding: const EdgeInsets.only(bottom: _cardMargin),
-                        child: ListTile(
-                          title: Label(
-                            _title,
-                            typography: TypographyFamily.caption,
-                          ),
-                          subtitle: _subtitlePrefix != null
-                              ? Wrap(
-                                  crossAxisAlignment: WrapCrossAlignment.center,
-                                  children: [
-                                    HeroAvatar.smallText(text: _subtitlePrefix),
-                                    SizedBox(width: 5),
-                                    Label(_subtitle),
-                                  ],
-                                )
-                              : Label(_subtitle),
-                          trailing: _trailingWidget ??
-                              const Icon(Icons.keyboard_arrow_right),
-                        ),
-                      ),
-                    ),
+                    _buildCardImage(),
+                    _buildCardfooter(appTheme),
                   ],
                 ),
                 _addOnIcon ?? Container(),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(
-                      vertical: 4.0,
-                      horizontal: 6,
-                    ),
-                    child: Label(
-                      _titleSuffix ?? '',
-                      style: const TextStyle(
-                          color: Color.fromARGB(255, 131, 131, 131)),
-                    ),
-                  ),
-                )
+                _buildTitleSuffix(appTheme),
               ],
             ),
           ),
         ),
-      ),
-    );
-  }
+      );
+
+  Widget _buildCardImage() => Expanded(
+        flex: 6,
+        child: Padding(
+          padding: const EdgeInsets.all(_imagepadding),
+          child: CachedNetworkImage(
+            imageUrl: _imageURL ?? Api.placeholederURL,
+            placeholder: (context, url) => Image.asset(
+              Resources.bikePlaceHolder,
+            ),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
+          ),
+        ),
+      );
+
+  Widget _buildCardfooter(IAppThemeData appTheme) => Expanded(
+        flex: 2,
+        child: Container(
+          height: _footerHeight,
+          color: appTheme.colors.secondaryLight.withOpacity(0.5),
+          padding: const EdgeInsets.only(bottom: _cardMargin),
+          child: ListTile(
+            title: Label(
+              _title,
+              typography: TypographyFamily.caption,
+            ),
+            subtitle: _subtitlePrefix != null
+                ? Wrap(
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      HeroAvatar.smallText(text: _subtitlePrefix),
+                      const SizedBox(width: 5),
+                      Label(_subtitle),
+                    ],
+                  )
+                : Label(_subtitle),
+            trailing: _trailingWidget ?? const Icon(Icons.keyboard_arrow_right),
+          ),
+        ),
+      );
+
+  Widget _buildTitleSuffix(IAppThemeData appTheme) => Align(
+        alignment: Alignment.topRight,
+        child: Container(
+          margin: const EdgeInsets.symmetric(
+            vertical: 4.0,
+            horizontal: 6,
+          ),
+          child: Label(
+            _titleSuffix ?? '',
+            style: TextStyle(color: appTheme.colors.defaultBorder),
+          ),
+        ),
+      );
 }

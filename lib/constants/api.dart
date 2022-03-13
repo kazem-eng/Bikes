@@ -5,7 +5,7 @@ abstract class Api {
   static const headerContentTypeKey = 'Content-Type';
   static const headerContentTypeValue = 'application/json';
   static const baseURL =
-      'https://run.mocky.io/v3/68c4783b-015e-4957-9d57-bb212607de64';
+      'https://run.mocky.io/v3/e90916b5-d693-47e3-92ce-0b250f5f5150';
   static const placeholederURL = 'http://via.placeholder.com/350x150';
 
   // Error Messages:

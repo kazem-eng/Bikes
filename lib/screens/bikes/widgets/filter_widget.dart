@@ -17,8 +17,10 @@ class FilterWidget extends StatelessWidget {
   final BikeFilter _filter;
   final void Function(BikeFilter filter)? _onChange;
 
-  final categoryChips = <Widget>[];
-  final sizeChips = <Widget>[];
+  final _categoryChips = <Widget>[];
+  final _sizeChips = <Widget>[];
+  final _defaultMax = 10000.0;
+  final _defaultDivision = 10000;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class FilterWidget extends StatelessWidget {
             typography: TypographyFamily.headline7,
           ),
           Wrap(
-            children: [...categoryChips],
+            children: [..._categoryChips],
           ),
           _spacer,
           const Label(
@@ -42,10 +44,10 @@ class FilterWidget extends StatelessWidget {
             typography: TypographyFamily.headline7,
           ),
           CustomRangeSlider(
-            maxRange: 10000.0,
+            maxRange: _defaultMax,
             minRange: 0.0,
             rangeValues: _filter.prices,
-            divisions: 10000,
+            divisions: _defaultDivision,
             onChanged: (rangeValues) {
               final updateFilter = _filter.copyWith(prices: rangeValues);
               _onChange?.call(updateFilter);
@@ -57,7 +59,7 @@ class FilterWidget extends StatelessWidget {
             typography: TypographyFamily.headline7,
           ),
           Wrap(
-            children: [...sizeChips],
+            children: [..._sizeChips],
           ),
           _spacer,
         ],
@@ -66,8 +68,10 @@ class FilterWidget extends StatelessWidget {
   }
 
   void _initiateSizeAndCategories() {
+    _categoryChips.clear();
+    _sizeChips.clear();
     for (var category in BikeCategory.values) {
-      categoryChips.add(
+      _categoryChips.add(
         Padding(
           padding: const EdgeInsets.all(3.0),
           child: ReactiveChip(
@@ -87,7 +91,7 @@ class FilterWidget extends StatelessWidget {
       );
     }
     for (var size in BikeSize.values) {
-      sizeChips.add(
+      _sizeChips.add(
         Padding(
           padding: const EdgeInsets.all(3.0),
           child: ReactiveChip(

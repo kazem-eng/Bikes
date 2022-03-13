@@ -14,7 +14,7 @@ enum TypographyFamily {
   body2,
   button,
   caption,
-  overLine
+  overLine,
 }
 
 enum FontFamily { roboto }
@@ -32,29 +32,18 @@ abstract class ITypographies {
 abstract class ITypography {
   const ITypography();
 
-  TextStyle get headline1;
-  TextStyle get headline2;
-  TextStyle get headline3;
   TextStyle get headline4;
   TextStyle get headline5;
   TextStyle get headline6;
   TextStyle get headline7;
   TextStyle get subtitle1;
-  TextStyle get subtitle2;
   TextStyle get body1;
   TextStyle get body2;
   TextStyle get button;
   TextStyle get caption;
-  TextStyle get overLine;
 
   TextStyle byTypographyFamily(TypographyFamily? typographyFamily) {
     switch (typographyFamily) {
-      case TypographyFamily.headline1:
-        return headline1;
-      case TypographyFamily.headline2:
-        return headline2;
-      case TypographyFamily.headline3:
-        return headline3;
       case TypographyFamily.headline4:
         return headline4;
       case TypographyFamily.headline5:
@@ -65,8 +54,6 @@ abstract class ITypography {
         return headline7;
       case TypographyFamily.subtitle1:
         return subtitle1;
-      case TypographyFamily.subtitle2:
-        return subtitle2;
       case TypographyFamily.body1:
         return body1;
       case TypographyFamily.body2:
@@ -75,8 +62,7 @@ abstract class ITypography {
         return button;
       case TypographyFamily.caption:
         return caption;
-      case TypographyFamily.overLine:
-        return overLine;
+
       default:
         return body1;
     }

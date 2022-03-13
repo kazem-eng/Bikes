@@ -6,5 +6,5 @@ part 'splash_screen_m.freezed.dart';
 
 @freezed
 class SplashScreenState extends BaseState with _$SplashScreenState {
-  const factory SplashScreenState.initialized() = Initialized;
+  const factory SplashScreenState.loading() = Loading;
 }

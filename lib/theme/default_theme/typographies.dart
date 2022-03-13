@@ -23,54 +23,29 @@ class _RobotoTypography extends ITypography {
   const _RobotoTypography();
 
   static const String robotoFontFamily = 'Roboto';
-  static const _h1HeadlineSize = 96.0;
-  static const _h2HeadlineSize = 60.0;
-  static const _h3HeadlineSize = 48.0;
   static const _h4HeadlineSize = 34.0;
   static const _h5HeadlineSize = 30.0;
   static const _h6HeadlineSize = 24.0;
   static const _h7HeadlineSize = 20.0;
   static const _subtitle1 = 16.0;
-  static const _subtitle2 = 14.0;
   static const _body1 = 16.0;
   static const _body2 = 14.0;
   static const _button = 14.0;
   static const _caption = 12.0;
-  static const _overline = 10.0;
   static const _defaultTextColor = _IColors.black;
   static const _h6HeadlineLetterSpacing = 0.18;
   static const _h7HeadlineLetterSpacing = 0.15;
   static const _subtitle1LetterSpacing = 0.08;
-  static const _subtitle2LetterSpacing = 0.07;
   static const _buttonLetterSpacing = 0.80;
   static const _body1LetterSpacing = 0.27;
   static const _body2LetterSpacing = 0.24;
   static const _captionLetterSpacing = 0.36;
-  static const _overlineLetterSpacing = 1.50;
 
   TextStyle get _baseTextStyle => const TextStyle(
         fontFamily: robotoFontFamily,
         fontWeight: FontWeight.w400,
         fontSize: _body1,
         color: _defaultTextColor,
-      );
-
-  @override
-  TextStyle get headline1 => _baseTextStyle.copyWith(
-        fontWeight: FontWeight.w700,
-        fontSize: _h1HeadlineSize,
-      );
-
-  @override
-  TextStyle get headline2 => _baseTextStyle.copyWith(
-        fontWeight: FontWeight.w700,
-        fontSize: _h2HeadlineSize,
-      );
-
-  @override
-  TextStyle get headline3 => _baseTextStyle.copyWith(
-        fontWeight: FontWeight.w700,
-        fontSize: _h3HeadlineSize,
       );
 
   @override
@@ -106,13 +81,6 @@ class _RobotoTypography extends ITypography {
       );
 
   @override
-  TextStyle get subtitle2 => _baseTextStyle.copyWith(
-        fontWeight: FontWeight.w700,
-        fontSize: _subtitle2,
-        letterSpacing: _subtitle2LetterSpacing,
-      );
-
-  @override
   TextStyle get body1 => _baseTextStyle.copyWith(
         letterSpacing: _body1LetterSpacing,
       );
@@ -137,12 +105,5 @@ class _RobotoTypography extends ITypography {
         fontSize: _caption,
         letterSpacing: _captionLetterSpacing,
         color: _IColors.grey04,
-      );
-
-  @override
-  TextStyle get overLine => _baseTextStyle.copyWith(
-        fontWeight: FontWeight.w800,
-        fontSize: _overline,
-        letterSpacing: _overlineLetterSpacing,
       );
 }

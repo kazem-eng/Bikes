@@ -24,15 +24,11 @@ class DetailsScreen extends BaseView<DetailsScreenViewModel> {
   Widget build(BuildContext context) {
     final appTheme = AppTheme.of(context).theme;
     return BlocBuilder<DetailsScreenViewModel, DetailsScreenState>(
-      bloc: viewModel..loadBikeDetails(bikeDetails: _bikeDetails),
+      bloc: viewModel..loadBikeDetails(_bikeDetails),
       builder: (_, state) {
         return SafeArea(
           child: Scaffold(
-            appBar: AppBar(
-              iconTheme: IconThemeData(color: appTheme.colors.defaultText),
-              backgroundColor: appTheme.colors.transparent,
-              elevation: 0,
-            ),
+            appBar: _buildAppbar(appTheme),
             body: (state is Initializing)
                 ? const Loading()
                 : _buildBikeDetails(
@@ -46,70 +42,86 @@ class DetailsScreen extends BaseView<DetailsScreenViewModel> {
     );
   }
 
+  AppBar _buildAppbar(IAppThemeData appTheme) => AppBar(
+        iconTheme: IconThemeData(color: appTheme.colors.defaultText),
+        backgroundColor: appTheme.colors.transparent,
+        elevation: 0,
+      );
+
   Widget _buildBikeDetails({
     required IAppThemeData appTheme,
     required DetailsScreenState state,
     required BuildContext context,
   }) {
-    final screenSize = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: ListView(
         children: [
-          Label(
-            _bikeDetails.brand,
-            typography: TypographyFamily.caption,
-          ),
-          Label(
-            _bikeDetails.name,
-            typography: TypographyFamily.headline5,
-          ),
-          Label(
-            _bikeDetails.year.toString(),
-            typography: TypographyFamily.body2,
-          ),
-          _verticalSpacer,
-          SizedBox(
-            height: screenSize.height * 0.3,
-            child: CarouselWithIndicatorDemo(imageList: _bikeDetails.images),
-          ),
-          _verticalSpacer,
-          Row(
-            children: [
-              Label(
-                '${Strings.currenctyIndicator}${_bikeDetails.price.toStringAsFixed(2)}',
-                style: appTheme.typographies.robotoFontFamily.headline6
-                    .copyWith(color: Colors.red),
-              ),
-              const Spacer(),
-              HeroAvatar.mediumText(text: _bikeDetails.size)
-            ],
-          ),
-          _verticalSpacer,
-          const Label(
-            Strings.description,
-            typography: TypographyFamily.headline7,
-          ),
-          Label(
-            _bikeDetails.description,
-            maxline: 7,
-            typography: TypographyFamily.body2,
-            textAlign: TextAlign.justify,
-          ),
-          const Spacer(),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 8,
-              horizontal: 4,
-            ),
-            child: Button.button(
-              title: Strings.addToBasket,
-              onTap: () {},
-              width: double.infinity,
-            ),
-          ),
+          ..._buildDetailsHeader(),
+          ..._buildSlider(context),
+          ..._buildPrice(appTheme),
+          ..._buildDescription(),
         ],
       ),
     );
   }
+
+  List<Widget> _buildDetailsHeader() => [
+        Label(
+          _bikeDetails.brand,
+          typography: TypographyFamily.caption,
+        ),
+        Label(
+          _bikeDetails.name,
+          typography: TypographyFamily.headline5,
+        ),
+        Label(
+          _bikeDetails.year.toString(),
+          typography: TypographyFamily.body2,
+        ),
+        _verticalSpacer,
+      ];
+
+  List<Widget> _buildSlider(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
+    return [
+      SizedBox(
+        height: screenSize.height * 0.3,
+        child: CarouselWithIndicatorDemo(imageList: _bikeDetails.images),
+      ),
+      _verticalSpacer,
+    ];
+  }
+
+  List<Widget> _buildPrice(IAppThemeData appTheme) {
+    return [
+      Row(
+        children: [
+          Label(
+            '${Strings.currenctyIndicator}${_bikeDetails.price.toStringAsFixed(2)}',
+            style: appTheme.typographies.robotoFontFamily.headline6
+                .copyWith(color: appTheme.colors.errorCaption),
+          ),
+          const Spacer(),
+          HeroAvatar.mediumText(text: _bikeDetails.size)
+        ],
+      ),
+    ];
+  }
+
+  List<Widget> _buildDescription() => [
+        _verticalSpacer,
+        const Label(
+          Strings.description,
+          typography: TypographyFamily.headline7,
+        ),
+        Label(
+          _bikeDetails.description,
+          maxline: 7,
+          typography: TypographyFamily.body2,
+          textAlign: TextAlign.justify,
+        ),
+        const Spacer(),
+      ];
 }

@@ -38,16 +38,24 @@ class BikesScreenViewModel extends BaseViewModel<BikesScreenState> {
       );
       bikes.addAll(await _loadBikesJsonData());
     }
-    emit(Loaded(
-      bikes: bikes,
-      filter: BikeFilter.empty(),
-      filterMode: false,
-      filteredBikes: bikes,
-    ));
+    emit(
+      Loaded(
+        bikes: bikes,
+        filter: BikeFilter.empty(),
+        filterMode: false,
+        filteredBikes: bikes,
+      ),
+    );
   }
 
   void onBikeSelection({required Bike selectedBike}) {
     _navigation.navigateTo(route: DetailsRoute(bikeDetails: selectedBike));
+  }
+
+  Future<List<Bike>> _loadBikesJsonData() async {
+    final jsonText = await rootBundle.loadString(Resources.bikesJson);
+    Iterable bikesJson = jsonDecode(jsonText);
+    return _convertBikesJson(bikesJson);
   }
 
   List<Bike> _convertBikesJson(Iterable<dynamic> bikesJson) {
@@ -60,62 +68,9 @@ class BikesScreenViewModel extends BaseViewModel<BikesScreenState> {
     return bikes;
   }
 
-  Future<List<Bike>> _loadBikesJsonData() async {
-    final jsonText = await rootBundle.loadString(Resources.bikesJson);
-    Iterable bikesJson = jsonDecode(jsonText);
-    return _convertBikesJson(bikesJson);
-  }
-
-  void search(String searchValue) {
-    if (state is Loaded) {
-      final loadedState = state as Loaded;
-      emit(
-        Search(
-          bikes: loadedState.bikes,
-          foundBikes: loadedState.bikes,
-          filterMode: loadedState.filterMode,
-          filteredBikes: loadedState.filteredBikes,
-          filter: loadedState.filter,
-          searchKey: searchValue,
-        ),
-      );
-      _searchOperation(searchValue);
-    } else {
-      _searchOperation(searchValue);
-    }
-  }
-
-  void _searchOperation(String searchValue) {
-    if (searchValue.isNotEmpty) {
-      final foundRecords = (state as Search)
-          .bikes
-          .where((element) =>
-              element.name.toLowerCase().contains(searchValue.toLowerCase()))
-          .toList();
-      if (foundRecords.isNotEmpty) {
-        emit((state as Search).copyWith(
-          foundBikes: foundRecords,
-          searchKey: searchValue,
-        ));
-      } else {
-        emit((state as Search).copyWith(
-          foundBikes: <Bike>[],
-          searchKey: searchValue,
-        ));
-      }
-    } else {
-      emit(
-        (state as Search).copyWith(
-          bikes: (state as Search).bikes,
-          foundBikes: (state as Search).bikes,
-          searchKey: searchValue,
-        ),
-      );
-    }
-  }
-
   void sort({required BikeSortType sortType}) {
     var sortedBikes = <Bike>[];
+    final currentState = state as Loaded;
     switch (sortType) {
       case BikeSortType.priceASC:
         sortedBikes = _getBikesFromState().sorted(
@@ -132,61 +87,47 @@ class BikesScreenViewModel extends BaseViewModel<BikesScreenState> {
           (a, b) => a.name.compareTo(b.name),
         );
         break;
-      case BikeSortType.year:
-        sortedBikes = _getBikesFromState().sorted(
-          (a, b) => a.year.compareTo(b.year),
-        );
-        break;
     }
-    state is Loaded
-        ? emit((state as Loaded).copyWith(bikes: sortedBikes))
-        : emit((state as Search).copyWith(foundBikes: sortedBikes));
+    if (currentState.filterMode) {
+      emit(currentState.copyWith(filteredBikes: sortedBikes));
+    } else {
+      emit(currentState.copyWith(bikes: sortedBikes));
+    }
   }
 
   void updateFilter(BikeFilter filter) {
-    state is Loaded
-        ? emit((state as Loaded).copyWith(
-            filter: filter,
-            filterMode: !filter.isEmpty,
-          ))
-        : emit((state as Search).copyWith(
-            filter: filter,
-            filterMode: !filter.isEmpty,
-          ));
+    final currentState = state as Loaded;
+    emit(
+      currentState.copyWith(
+        filter: filter,
+        filterMode: !currentState.filter.isEmpty,
+      ),
+    );
   }
 
   void filterBikes() {
-    final filter = getFilter();
-    if (!filter.isEmpty) {
-      final filteredBikes = _filterByCategory(filter);
-      final fileteredBySize = _filterBySize(filter);
-      final fileteredByPrice = _filterByPrice(filter);
+    final currentState = state as Loaded;
+    if (currentState.filterMode) {
+      final filteredBikes = [..._filterByCategory(currentState.filter)];
+      final fileteredBySize = [..._filterBySize(currentState.filter)];
+      final fileteredByPrice = [..._filterByPrice(currentState.filter)];
 
       filteredBikes.removeWhere((item) => !fileteredBySize.contains(item));
       filteredBikes.removeWhere((item) => !fileteredByPrice.contains(item));
 
-      state is Loaded
-          ? emit((state as Loaded).copyWith(
-              filteredBikes: filteredBikes,
-              filterMode: true,
-            ))
-          : emit((state as Search).copyWith(
-              filteredBikes: filteredBikes,
-              filterMode: true,
-            ));
+      emit(currentState.copyWith(
+        filteredBikes: filteredBikes,
+        filterMode: true,
+      ));
     } else {
-      state is Loaded
-          ? emit((state as Loaded).copyWith(
-              filterMode: false,
-            ))
-          : emit((state as Search).copyWith(
-              filterMode: false,
-            ));
+      emit(currentState.copyWith(
+        filterMode: false,
+      ));
     }
   }
 
   List<Bike> _filterByCategory(BikeFilter filter) {
-    final bikesToFilter = _getBikesFromState();
+    final bikesToFilter = [...(state as Loaded).bikes];
 
     final catFilterStrings = <String>[];
     if (filter.categories.isNotEmpty) {
@@ -205,7 +146,7 @@ class BikesScreenViewModel extends BaseViewModel<BikesScreenState> {
     BikeFilter filter,
   ) {
     final sizeFilterStrings = <String>[];
-    final bikesToFilter = _getBikesFromState();
+    final bikesToFilter = [...(state as Loaded).bikes];
     if (filter.sizes.isNotEmpty) {
       for (var size in filter.sizes) {
         sizeFilterStrings.add(EnumHelpers.humanize(size));
@@ -222,7 +163,7 @@ class BikesScreenViewModel extends BaseViewModel<BikesScreenState> {
   List<Bike> _filterByPrice(
     BikeFilter filter,
   ) {
-    final list = _getBikesFromState()
+    final list = [...(state as Loaded).bikes]
         .where((bike) =>
             filter.prices.start <= bike.price &&
             bike.price <= filter.prices.end)
@@ -230,9 +171,7 @@ class BikesScreenViewModel extends BaseViewModel<BikesScreenState> {
     return list;
   }
 
-  List<Bike> _getBikesFromState() =>
-      state is Loaded ? (state as Loaded).bikes : (state as Search).foundBikes;
-
-  BikeFilter getFilter() =>
-      state is Search ? (state as Search).filter : (state as Loaded).filter;
+  List<Bike> _getBikesFromState() => (state as Loaded).filterMode
+      ? (state as Loaded).filteredBikes
+      : (state as Loaded).bikes;
 }

@@ -17,11 +17,13 @@ class SplashScreen extends BaseView<SplashScreenViewModel> {
     return BlocBuilder<SplashScreenViewModel, SplashScreenState>(
       bloc: viewModel..navigateToLogin(),
       builder: (_, state) {
-        return Scaffold(
-          body: Center(
-            child: Image.asset(
-              Resources.internetStoreLogo,
-              width: _logoWidth,
+        return SafeArea(
+          child: Scaffold(
+            body: Center(
+              child: Image.asset(
+                Resources.internetStoreLogo,
+                width: _logoWidth,
+              ),
             ),
           ),
         );

@@ -14,12 +14,4 @@ class BikesScreenState extends BaseState with _$BikesScreenState {
     required BikeFilter filter,
     required bool filterMode,
   }) = Loaded;
-  const factory BikesScreenState.search({
-    required String searchKey,
-    required List<Bike> bikes,
-    required List<Bike> foundBikes,
-    required List<Bike> filteredBikes,
-    required BikeFilter filter,
-    required bool filterMode,
-  }) = Search;
 }

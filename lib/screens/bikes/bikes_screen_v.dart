@@ -68,8 +68,14 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
         child: Padding(
           padding: const EdgeInsets.all(_toolbarMargin),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              _buildSearchBox(state),
+              Padding(
+                padding: const EdgeInsets.only(
+                    left: 10.0, right: 18, top: 18, bottom: 18),
+                child: Image.asset(Resources.internetStoreLogo),
+              ),
+              const Spacer(),
               const ui_kit.Label(Strings.filter),
               IconButton(
                 onPressed: () {
@@ -81,27 +87,13 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
                 icon: const Icon(Icons.filter_alt_outlined),
               ),
               const ui_kit.Label(Strings.sort),
-              _buildSortItems(),
+              _buildSortContextMenu(),
             ],
           ),
         ),
       );
 
-  Widget _buildSearchBox(BikesScreenState state) {
-    final _controller = ui_kit.TextController(text: _getSearchValue(state));
-    return Expanded(
-      child: ui_kit.TextInput(
-        controller: _controller,
-        suffixIcon: Icons.search,
-        hint: Strings.search,
-        onChanged: (searchValue) {
-          viewModel.search(searchValue);
-        },
-      ),
-    );
-  }
-
-  Widget _buildSortItems() => ui_kit.ContextMenu(
+  Widget _buildSortContextMenu() => ui_kit.ContextMenu(
         actions: [
           ui_kit.ContextMenuAction(
               title: Strings.highestPrice,
@@ -118,11 +110,6 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
               onTap: () {
                 viewModel.sort(sortType: BikeSortType.alphabetically);
               }),
-          ui_kit.ContextMenuAction(
-              title: Strings.year,
-              onTap: () {
-                viewModel.sort(sortType: BikeSortType.year);
-              }),
         ],
         icon: const Icon(Icons.sort),
       );
@@ -132,19 +119,13 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
     required BuildContext context,
   }) =>
       Expanded(
-        flex: _listFlex,
-        child: state is Loaded
-            ? _buildListView(
-                bikes: state.filterMode ? state.filteredBikes : state.bikes,
-                context: context,
-              )
-            : _buildListView(
-                bikes: (state as Search).filterMode
-                    ? state.filteredBikes
-                    : state.foundBikes,
-                context: context,
-              ),
-      );
+          flex: _listFlex,
+          child: _buildListView(
+            bikes: (state as Loaded).filterMode
+                ? state.filteredBikes
+                : state.bikes,
+            context: context,
+          ));
 
   Widget _buildListView({
     required List<Bike> bikes,
@@ -153,12 +134,10 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
       bikes.isEmpty
           ? const ui_kit.EmptyIndicator()
           : ListView.builder(
+              key: UniqueKey(),
               physics: const AlwaysScrollableScrollPhysics(),
               itemCount: bikes.length,
-              itemBuilder: (context, index) {
-                final foundBike = bikes[index];
-                return _cardItem(foundBike);
-              },
+              itemBuilder: (context, index) => _cardItem(bikes[index]),
             );
 
   Widget _cardItem(Bike bike) => ui_kit.CardItem(
@@ -195,13 +174,12 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
     required BuildContext context,
     required BikesScreenState state,
   }) async {
-    final currentFilter = viewModel.getFilter();
     DialogHelper.show(
       barrierLabel: Strings.filter,
       context: context,
       title: Strings.filter,
       body: FilterWidget(
-        filter: currentFilter,
+        filter: (state as Loaded).filter,
         onChange: (newFilter) {
           viewModel.updateFilter(newFilter);
         },
@@ -211,7 +189,4 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
       (value) => viewModel.filterBikes(),
     );
   }
-
-  String _getSearchValue(BikesScreenState state) =>
-      state is Search ? state.searchKey : '';
 }

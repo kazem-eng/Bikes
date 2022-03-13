@@ -41,7 +41,7 @@ class _ReactiveChipState extends State<ReactiveChip> {
         });
         widget._onSelected?.call(value);
       },
-      selectedColor: appTheme.colors.successLabel,
+      selectedColor: appTheme.colors.successCaption,
       selected: isSelected,
       label: Label(
         widget._label,

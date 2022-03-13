@@ -9,8 +9,6 @@ enum ToastType {
   basic,
   success,
   error,
-  info,
-  warning,
 }
 
 enum _toastActionType {
@@ -208,10 +206,6 @@ class Toaster {
         return _ToastDecorationData.success(appTheme.colors);
       case ToastType.error:
         return _ToastDecorationData.error(appTheme.colors);
-      case ToastType.info:
-        return _ToastDecorationData.info(appTheme.colors);
-      case ToastType.warning:
-        return _ToastDecorationData.warning(appTheme.colors);
       case ToastType.basic:
         return _ToastDecorationData.basic(appTheme.colors);
     }
@@ -267,40 +261,6 @@ class Toaster {
       position: position,
     );
   }
-
-  static void infoToast({
-    required BuildContext context,
-    required String message,
-    String? caption,
-    List<ToastAction>? actions,
-    FlashPosition? position,
-  }) {
-    showToast(
-      context: context,
-      message: message,
-      caption: caption,
-      toastType: ToastType.info,
-      actions: actions,
-      position: position,
-    );
-  }
-
-  static void warningToast({
-    required BuildContext context,
-    required String message,
-    String? caption,
-    List<ToastAction>? actions,
-    FlashPosition? position,
-  }) {
-    showToast(
-      context: context,
-      message: message,
-      caption: caption,
-      toastType: ToastType.warning,
-      actions: actions,
-      position: position,
-    );
-  }
 }
 
 class _ToastDecorationData {
@@ -335,32 +295,6 @@ class _ToastDecorationData {
       captionColor: colors.errorCaption,
       primaryColor: colors.errorDark,
       secondaryColor: colors.errorLight,
-    );
-  }
-
-  factory _ToastDecorationData.info(IColors colors) {
-    return _ToastDecorationData(
-      icon: Icon(
-        Icons.arrow_forward_rounded,
-        color: colors.primaryCaption,
-      ),
-      backgroundColor: colors.primaryBackground,
-      captionColor: colors.primaryCaption,
-      primaryColor: colors.primaryDark,
-      secondaryColor: colors.primaryLight,
-    );
-  }
-
-  factory _ToastDecorationData.warning(IColors colors) {
-    return _ToastDecorationData(
-      icon: Icon(
-        Icons.dangerous,
-        color: colors.warningCaption,
-      ),
-      backgroundColor: colors.warningBackground,
-      captionColor: colors.warningCaption,
-      primaryColor: colors.warningDark,
-      secondaryColor: colors.warningLight,
     );
   }
 

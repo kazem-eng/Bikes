@@ -18,24 +18,9 @@ abstract class IAppThemeData {
   ButtonStyle get disabledOutlinedButtonStyle;
   ButtonStyle get plainButtonStyle;
   ButtonStyle get disabledPlainButtonStyle;
-  ButtonStyle get fabFilledButtonStyle;
-  ButtonStyle get fabOutlinedButtonStyle;
-  ButtonStyle get fabPlainButtonStyle;
-  ButtonStyle get disabledFabFilledButtonStyle;
-  ButtonStyle get disabledFabOutlinedButtonStyle;
-  ButtonStyle get disabledFabPlainButtonStyle;
-  ButtonStyle get smallFabFilledButtonStyle;
-  ButtonStyle get smallFabOutlinedButtonStyle;
-  ButtonStyle get smallFabPlainButtonStyle;
-  ButtonStyle get disabledSmallFabFilledButtonStyle;
-  ButtonStyle get disabledSmallFabOutlinedButtonStyle;
-  ButtonStyle get disabledSmallFabPlainButtonStyle;
 
   // card
   BoxDecoration get cardDecoration;
-  TextStyle get cardTitleTextStyle;
-  TextStyle get cardSubtitleTextStyle;
-  TextStyle get cardDescriptionTextStyle;
 
   // Dialog
   ShapeBorder get dialogShapeBorder;
