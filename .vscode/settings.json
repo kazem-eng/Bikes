@@ -1,0 +1,26 @@
+{
+  "files.exclude": {
+    "**/.dart_tool": true,
+    "**/.packages": true,
+    "**/.idea": true,
+    "**/.metadata": true,
+    "android": true,
+    "windows": true,
+    "gradle": true,
+    "**/*.gradle": true,
+    "build": true,
+    "ios": true,
+    "pubspec.lock": true,
+    "com.exto.app.iml": true,
+    "README.md": false,
+    "**/*.config.dart": true,
+    "**/*.gr.dart": true,
+    "**/*.g.dart": true,
+    "**/*.mocks.dart": true,
+    "**/*.freezed.dart": true,
+    "**/.flutter-plugins*": true,
+    "debug.log": true,
+    "web": true
+  },
+  "liveshare.accessibility.soundsEnabled": false
+}

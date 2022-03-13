@@ -159,10 +159,9 @@ class HeroAvatar extends StatelessWidget {
   ImageProvider<Object>? _builHeroAvatar(IAppThemeData appTheme) {
     if (_heroType == HeroType.avatar && _imageAsset != null) {
       return AssetImage(_imageAsset!);
-    } else if (_heroType == HeroType.avatar && _imageURL != null) {
+    }
+    if (_heroType == HeroType.avatar && _imageURL != null) {
       return NetworkImage(_imageURL!);
-    } else {
-      return const NetworkImage('');
     }
   }
 
