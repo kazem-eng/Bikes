@@ -55,7 +55,7 @@ class DetailsScreen extends BaseView<DetailsScreenViewModel> {
   }) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: ListView(
+      child: Column(
         children: [
           ..._buildDetailsHeader(appTheme),
           ..._buildSlider(context),
@@ -125,6 +125,8 @@ class DetailsScreen extends BaseView<DetailsScreenViewModel> {
         const Spacer(),
         Button.button(
           title: Strings.addToBasket,
+          onTap: () {},
+          width: double.infinity,
         )
       ];
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 
 import 'package:bike_catalog/services/navigation/navigation.dart';
@@ -19,6 +20,12 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // To disable landscape mode
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
     return AppTheme(
       appThemeData: _appThemeData,
       child: MaterialApp.router(

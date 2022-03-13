@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:bike_catalog/constants/constants.dart';
 import 'package:bike_catalog/theme/theme.dart';
 import 'package:bike_catalog/ui_kit/ui_kit.dart';
-
-enum HeroType {
-  avatar,
-  text,
-  icon,
-}
 
 enum HeroSize {
   large,
@@ -18,59 +11,20 @@ enum HeroSize {
 
 class HeroAvatar extends StatelessWidget {
   const HeroAvatar({
-    required HeroType heroType,
     required HeroSize heroSize,
-    String? imageAsset,
-    String? imageURL,
     String? text,
-    Icon? icon,
     Color? backgroundColor,
     Key? key,
-  })  : assert(
-          heroType != HeroType.avatar || imageAsset != null || imageURL != null,
-          Api.heroException,
-        ),
-        _heroType = heroType,
-        _heroSize = heroSize,
-        _imageAsset = imageAsset,
-        _imageURL = imageURL,
-        _icon = icon,
+  })  : _heroSize = heroSize,
         _text = text,
         _backgroundColor = backgroundColor,
         super(key: key);
-
-  factory HeroAvatar.smallImage({
-    String? imageAsset,
-    String? imageURL,
-    Color? backgroundColor,
-  }) =>
-      HeroAvatar(
-        heroType: HeroType.avatar,
-        heroSize: HeroSize.medium,
-        imageAsset: imageAsset,
-        imageURL: imageURL,
-        backgroundColor: backgroundColor,
-      );
-
-  factory HeroAvatar.largeImage({
-    String? imageAsset,
-    String? imageURL,
-    Color? backgroundColor,
-  }) =>
-      HeroAvatar(
-        heroType: HeroType.avatar,
-        heroSize: HeroSize.large,
-        imageAsset: imageAsset,
-        imageURL: imageURL,
-        backgroundColor: backgroundColor,
-      );
 
   factory HeroAvatar.smallText({
     String? text,
     Color? backgroundColor,
   }) =>
       HeroAvatar(
-        heroType: HeroType.text,
         heroSize: HeroSize.small,
         text: text,
         backgroundColor: backgroundColor,
@@ -81,7 +35,6 @@ class HeroAvatar extends StatelessWidget {
     Color? backgroundColor,
   }) =>
       HeroAvatar(
-        heroType: HeroType.text,
         heroSize: HeroSize.medium,
         text: text,
         backgroundColor: backgroundColor,
@@ -92,40 +45,13 @@ class HeroAvatar extends StatelessWidget {
     Color? backgroundColor,
   }) =>
       HeroAvatar(
-        heroType: HeroType.text,
         heroSize: HeroSize.large,
         text: text,
         backgroundColor: backgroundColor,
       );
 
-  factory HeroAvatar.smallIcon({
-    required Icon icon,
-    Color? backgroundColor,
-  }) =>
-      HeroAvatar(
-        heroType: HeroType.icon,
-        heroSize: HeroSize.small,
-        icon: icon,
-        backgroundColor: backgroundColor,
-      );
-
-  factory HeroAvatar.avatar({
-    required String imageAsset,
-    Color? backgroundColor,
-  }) =>
-      HeroAvatar(
-        heroType: HeroType.avatar,
-        heroSize: HeroSize.medium,
-        imageAsset: imageAsset,
-        backgroundColor: backgroundColor,
-      );
-
-  final String? _imageAsset;
-  final String? _imageURL;
   final String? _text;
-  final Icon? _icon;
   final Color? _backgroundColor;
-  final HeroType _heroType;
   final HeroSize _heroSize;
 
   static const _largeSize = 74.0;
@@ -140,8 +66,7 @@ class HeroAvatar extends StatelessWidget {
       height: _specifySize(),
       width: _specifySize(),
       child: CircleAvatar(
-        child: _buildChild(appTheme),
-        backgroundImage: _builHeroAvatar(appTheme),
+        child: _builHeroText(appTheme),
         backgroundColor:
             _backgroundColor ?? appTheme.colors.disabledPrimaryBackground,
       ),
@@ -155,26 +80,6 @@ class HeroAvatar extends StatelessWidget {
             : TypographyFamily.caption,
         color: appTheme.colors.secondaryText,
       );
-
-  Widget? _buildChild(IAppThemeData appTheme) {
-    switch (_heroType) {
-      case HeroType.text:
-        return _builHeroText(appTheme);
-      case HeroType.icon:
-        return Center(child: _icon!);
-      case HeroType.avatar:
-        return null;
-    }
-  }
-
-  ImageProvider<Object>? _builHeroAvatar(IAppThemeData appTheme) {
-    if (_heroType == HeroType.avatar && _imageAsset != null) {
-      return AssetImage(_imageAsset!);
-    }
-    if (_heroType == HeroType.avatar && _imageURL != null) {
-      return NetworkImage(_imageURL!);
-    }
-  }
 
   double _specifySize() {
     switch (_heroSize) {
