@@ -1,4 +1,4 @@
-import 'package:bike_catalog/constants/constants.dart';
+import 'package:bikes/constants/constants.dart';
 
 class BaseException implements Exception {
   BaseException({

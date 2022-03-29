@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:bike_catalog/base/base.dart';
-import 'package:bike_catalog/constants/constants.dart';
-import 'package:bike_catalog/screens/splash/splash_screen_m.dart';
-import 'package:bike_catalog/screens/splash/splash_screen_vm.dart';
+import 'package:bikes/base/base.dart';
+import 'package:bikes/constants/constants.dart';
+import 'package:bikes/screens/splash/splash_screen_m.dart';
+import 'package:bikes/screens/splash/splash_screen_vm.dart';
 
 class SplashScreen extends BaseView<SplashScreenViewModel> {
   SplashScreen({Key? key}) : super(key: key);

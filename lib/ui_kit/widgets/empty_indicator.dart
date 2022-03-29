@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:bike_catalog/constants/constants.dart';
+import 'package:bikes/constants/constants.dart';
 
 class EmptyIndicator extends StatelessWidget {
   const EmptyIndicator({Key? key}) : super(key: key);

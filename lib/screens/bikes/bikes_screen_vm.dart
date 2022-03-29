@@ -3,13 +3,13 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 
-import 'package:bike_catalog/base/base.dart';
-import 'package:bike_catalog/constants/constants.dart';
-import 'package:bike_catalog/helpers/helpers.dart';
-import 'package:bike_catalog/models/models.dart';
-import 'package:bike_catalog/screens/bikes/bikes_screen_m.dart';
-import 'package:bike_catalog/services/services.dart';
-import 'package:bike_catalog/ui_kit/helpers/toaster_helper.dart';
+import 'package:bikes/base/base.dart';
+import 'package:bikes/constants/constants.dart';
+import 'package:bikes/helpers/helpers.dart';
+import 'package:bikes/models/models.dart';
+import 'package:bikes/screens/bikes/bikes_screen_m.dart';
+import 'package:bikes/services/services.dart';
+import 'package:bikes/ui_kit/helpers/toaster_helper.dart';
 
 @injectable
 class BikesScreenViewModel extends BaseViewModel<BikesScreenState> {

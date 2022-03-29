@@ -1,3 +1,7 @@
+# Keys
+*.jks
+*.pepk
+
 # Built application files
 *.apk
 *.aar

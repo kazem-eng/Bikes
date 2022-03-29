@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:http/http.dart';
 
-import 'package:bike_catalog/constants/api.dart';
-import 'package:bike_catalog/helpers/exception.dart';
-import 'package:bike_catalog/services/network/network.dart';
+import 'package:bikes/constants/api.dart';
+import 'package:bikes/helpers/exception.dart';
+import 'package:bikes/services/network/network.dart';
 
 class NetworkCall extends INetworkService {
   NetworkCall({

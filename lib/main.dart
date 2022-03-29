@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:bike_catalog/app.dart';
-import 'package:bike_catalog/setup.dart';
+import 'package:bikes/app.dart';
+import 'package:bikes/setup.dart';
 
 void main() async {
   configureDependencies();

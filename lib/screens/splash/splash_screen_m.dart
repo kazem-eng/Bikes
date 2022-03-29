@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:bike_catalog/base/base.dart';
+import 'package:bikes/base/base.dart';
 
 part 'splash_screen_m.freezed.dart';
 

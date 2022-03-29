@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:bike_catalog/constants/constants.dart';
-import 'package:bike_catalog/ui_kit/ui_kit.dart';
+import 'package:bikes/constants/constants.dart';
+import 'package:bikes/ui_kit/ui_kit.dart';
 
 abstract class DialogHelper {
   static Future<void> show<T>({

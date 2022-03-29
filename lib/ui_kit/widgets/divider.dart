@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:bike_catalog/theme/theme.dart';
+import 'package:bikes/theme/theme.dart';
 
 class LineDivider extends StatelessWidget {
   const LineDivider({

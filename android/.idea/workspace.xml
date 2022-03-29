@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="66c8151c-0faa-442d-9c2f-ddc2270ec0f4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/example/bike_catalog/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/example/bike_catalog/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/profile/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/profile/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/app.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/base/base_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/base/base_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/helpers/exception.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/helpers/exception.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/models/filter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/models/filter.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/screens/bikes/bikes_screen_m.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/bikes/bikes_screen_m.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/screens/bikes/bikes_screen_v.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/bikes/bikes_screen_v.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/screens/bikes/bikes_screen_vm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/bikes/bikes_screen_vm.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/screens/bikes/widgets/filter_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/bikes/widgets/filter_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/screens/details/details_screen_m.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/details/details_screen_m.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/screens/details/details_screen_v.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/details/details_screen_v.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/screens/details/details_screen_vm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/details/details_screen_vm.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/screens/splash/splash_screen_m.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/splash/splash_screen_m.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/screens/splash/splash_screen_v.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/splash/splash_screen_v.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/screens/splash/splash_screen_vm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/splash/splash_screen_vm.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/services/navigation/router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/services/navigation/router.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/services/network/network_call.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/services/network/network_call.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/setup.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/setup.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/theme/app_theme_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/theme/app_theme_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/theme/default_theme/default_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/theme/default_theme/default_theme.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/helpers/dialog_helper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/helpers/dialog_helper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/helpers/toaster_helper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/helpers/toaster_helper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/card_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/card_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/context_menu/context_menu.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/context_menu/context_menu.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/custom_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/custom_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/divider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/divider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/empty_indicator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/empty_indicator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/hero_avatar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/hero_avatar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/image_slider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/image_slider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/label.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/label.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/range_slider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/range_slider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/reactive_chip.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/reactive_chip.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_4_API_29]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="EXPORT_PRIVATE_KEY" value="false" />
+    <option name="KEY_STORE_PATH" value="E:\Development\Projects\Mobile\Flutter\Internetstore\Bike_Catalog\bikes_release_key.jks" />
+    <option name="KEY_ALIAS" value="Bikes" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="273x2kMtw3v4PDdVlfIUE5n45nS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ApkExportedModule" value="android.app" />
+    <property name="BundleExportedModule" value="android.app" />
+    <property name="ExportApk.ApkPath" value="E:\Development\Projects\Mobile\Flutter\Internetstore\Bike_Catalog\android\app" />
+    <property name="ExportApk.BuildVariants" value="release" />
+    <property name="ExportApk.SignV2" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="android.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="66c8151c-0faa-442d-9c2f-ddc2270ec0f4" name="Default Changelist" comment="" />
+      <created>1648562365909</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648562365909</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="4958" y="423" key="FileChooserDialogImpl" timestamp="1648562601989">
+      <screen x="3840" y="0" width="2560" height="1392" />
+    </state>
+    <state x="4958" y="423" key="FileChooserDialogImpl/0.0.1536.816/3840.0.2560.1392@3840.0.2560.1392" timestamp="1648562601989" />
+  </component>
+</project>

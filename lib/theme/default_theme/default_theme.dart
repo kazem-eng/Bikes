@@ -1,4 +1,4 @@
-import 'package:bike_catalog/theme/theme.dart';
+import 'package:bikes/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 part 'colors.dart';

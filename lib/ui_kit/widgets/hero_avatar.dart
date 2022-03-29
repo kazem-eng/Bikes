@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:bike_catalog/theme/theme.dart';
-import 'package:bike_catalog/ui_kit/ui_kit.dart';
+import 'package:bikes/theme/theme.dart';
+import 'package:bikes/ui_kit/ui_kit.dart';
 
 enum HeroSize {
   large,

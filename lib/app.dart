@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 
-import 'package:bike_catalog/services/navigation/navigation.dart';
-import 'package:bike_catalog/theme/theme.dart';
+import 'package:bikes/services/navigation/navigation.dart';
+import 'package:bikes/theme/theme.dart';
 
 @singleton
 class App extends StatelessWidget {

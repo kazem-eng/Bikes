@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:bike_catalog/models/bike_enums.dart';
+import 'package:bikes/models/bike_enums.dart';
 
 class BikeFilter {
   BikeFilter({

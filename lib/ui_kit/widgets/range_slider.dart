@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:bike_catalog/theme/theme.dart';
+import 'package:bikes/theme/theme.dart';
 
-import 'package:bike_catalog/constants/constants.dart';
+import 'package:bikes/constants/constants.dart';
 
 class CustomRangeSlider extends StatefulWidget {
   const CustomRangeSlider({
