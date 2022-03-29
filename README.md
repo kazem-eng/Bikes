@@ -1,4 +1,4 @@
-# Bike_Catalog
+# Bikes
 
 Mobile solution for a bike catalog with bike detail view.
 
