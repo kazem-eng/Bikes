@@ -3,11 +3,9 @@ import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
 import 'package:injectable/injectable.dart';
 
-import 'package:bike_catalog/services/navigation/navigation.dart';
 import 'package:bike_catalog/setup.config.dart';
 import 'package:bike_catalog/theme/theme.dart';
-
-import 'package:bike_catalog/services/network/network.dart';
+import 'package:bike_catalog/services/services.dart';
 
 final getIt = GetIt.instance;
 
