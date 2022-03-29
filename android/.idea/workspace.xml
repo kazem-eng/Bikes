@@ -2,46 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66c8151c-0faa-442d-9c2f-ddc2270ec0f4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/example/bike_catalog/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/example/bike_catalog/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/profile/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/profile/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/app.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/base/base_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/base/base_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/helpers/exception.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/helpers/exception.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/models/filter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/models/filter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/screens/bikes/bikes_screen_m.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/bikes/bikes_screen_m.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/screens/bikes/bikes_screen_v.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/bikes/bikes_screen_v.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/screens/bikes/bikes_screen_vm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/bikes/bikes_screen_vm.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/screens/bikes/widgets/filter_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/bikes/widgets/filter_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/screens/details/details_screen_m.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/details/details_screen_m.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/screens/details/details_screen_v.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/details/details_screen_v.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/screens/details/details_screen_vm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/details/details_screen_vm.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/screens/splash/splash_screen_m.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/splash/splash_screen_m.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/screens/splash/splash_screen_v.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/splash/splash_screen_v.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/screens/splash/splash_screen_vm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/screens/splash/splash_screen_vm.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/services/navigation/router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/services/navigation/router.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/services/network/network_call.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/services/network/network_call.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/setup.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/setup.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/theme/app_theme_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/theme/app_theme_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/theme/default_theme/default_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/theme/default_theme/default_theme.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/helpers/dialog_helper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/helpers/dialog_helper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/helpers/toaster_helper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/helpers/toaster_helper.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/card_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/card_item.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/context_menu/context_menu.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/context_menu/context_menu.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/custom_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/custom_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/divider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/divider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/empty_indicator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/empty_indicator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/hero_avatar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/hero_avatar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/image_slider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/image_slider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/label.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/label.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/range_slider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/range_slider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/ui_kit/widgets/reactive_chip.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/ui_kit/widgets/reactive_chip.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +67,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="android.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -173,6 +139,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="3940" y="100" width="2360" height="1192" key="AVDManager" timestamp="1648567358609">
+      <screen x="3840" y="0" width="2560" height="1392" />
+    </state>
+    <state x="3940" y="100" width="2360" height="1192" key="AVDManager/0.0.1536.816/3840.0.2560.1392@3840.0.2560.1392" timestamp="1648567358609" />
     <state x="4958" y="423" key="FileChooserDialogImpl" timestamp="1648562601989">
       <screen x="3840" y="0" width="2560" height="1392" />
     </state>
