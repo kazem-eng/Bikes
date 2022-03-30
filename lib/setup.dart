@@ -1,15 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
 import 'package:injectable/injectable.dart';
 
+import 'package:bikes/services/services.dart';
 import 'package:bikes/setup.config.dart';
 import 'package:bikes/theme/theme.dart';
-import 'package:bikes/services/services.dart';
 
 final getIt = GetIt.instance;
 
-void configureDependencies() => $initGetIt(getIt);
+Future<void> configureDependencies() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  $initGetIt(getIt);
+}
 
 T locateService<T extends Object>() => getIt.get<T>();
 

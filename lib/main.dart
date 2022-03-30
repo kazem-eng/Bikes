@@ -4,6 +4,6 @@ import 'package:bikes/app.dart';
 import 'package:bikes/setup.dart';
 
 void main() async {
-  configureDependencies();
+  await configureDependencies();
   runApp(locateService<App>());
 }
