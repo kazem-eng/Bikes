@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart';
 import 'package:injectable/injectable.dart';
 
@@ -46,4 +48,14 @@ abstract class RegisterModule {
 
   @singleton
   INetworkService get network => NetworkCall(client: _client);
+
+  @singleton
+  IAuthService get authService => FirebaseAuthService(
+        firebaseAuth: FirebaseAuth.instance,
+        googleSignIn: GoogleSignIn(),
+      );
+
+  @singleton
+  ApplicationService get appService =>
+      ApplicationService(authenticationService: authService);
 }
