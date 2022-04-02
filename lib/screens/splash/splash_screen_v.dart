@@ -21,7 +21,7 @@ class SplashScreen extends BaseView<SplashScreenViewModel> {
           child: Scaffold(
             body: Center(
               child: Image.asset(
-                Resources.internetStoreLogo,
+                Resources.bikesLogo,
                 width: _logoWidth,
               ),
             ),

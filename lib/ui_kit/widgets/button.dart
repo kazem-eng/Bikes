@@ -220,7 +220,10 @@ class Button extends StatelessWidget {
     required IAppThemeData appTheme,
     required bool isDisabled,
   }) {
-    final buttonText = Text(_title ?? '');
+    final buttonText = Text(
+      _title ?? '',
+      overflow: TextOverflow.ellipsis,
+    );
     const iconMargin = EdgeInsets.only(right: 12);
     return _isBusy
         ? const Loading()

@@ -15,4 +15,8 @@ abstract class Strings {
   static const categorySelection = 'Select Category';
   static const priceSelection = 'Select Price';
   static const sizeSelection = 'Select Size';
+  static const loginWithGoogle = 'Login with Google';
+
+  static const successfulLogin = 'Successfully logged in';
+  static const failLogin = 'Failed to logged in';
 }

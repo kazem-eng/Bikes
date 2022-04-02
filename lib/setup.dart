@@ -56,6 +56,5 @@ abstract class RegisterModule {
       );
 
   @singleton
-  ApplicationService get appService =>
-      ApplicationService(authenticationService: authService);
+  AppViewModel get appState => AppViewModel(authenticationService: authService);
 }

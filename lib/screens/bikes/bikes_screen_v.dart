@@ -78,7 +78,7 @@ class BikesScreen extends BaseView<BikesScreenViewModel> {
                   top: 18,
                   bottom: 18,
                 ),
-                child: Image.asset(Resources.internetStoreLogo),
+                child: Image.asset(Resources.bikesLogo),
               ),
               const Spacer(),
               ui_kit.Button.plain(

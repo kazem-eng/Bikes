@@ -6,5 +6,8 @@ part 'login_screen_m.freezed.dart';
 
 @freezed
 class LoginScreenState extends BaseState with _$LoginScreenState {
-  const factory LoginScreenState.loading() = Loading;
+  const factory LoginScreenState.init() = Init;
+  const factory LoginScreenState.busy() = Busy;
+  const factory LoginScreenState.failedLogin(String message) = FailedLogin;
+  const factory LoginScreenState.successLogin(String message) = SuccessLogin;
 }

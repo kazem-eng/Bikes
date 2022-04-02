@@ -16,7 +16,6 @@ class FirebaseAuthService implements IAuthService {
 
   final firebase.FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
-  User? _user;
 
   @override
   StreamController controller = StreamController<AuthenticationStatus>();
@@ -26,10 +25,10 @@ class FirebaseAuthService implements IAuthService {
 
   @override
   Future<User?> get currentUser async {
-    if (_firebaseAuth.currentUser != null && _user == null) {
+    if (_firebaseAuth.currentUser != null) {
       final userWithName = User(
         id: _firebaseAuth.currentUser!.uid,
-        email: _user!.email,
+        email: _firebaseAuth.currentUser!.email!,
         name: _firebaseAuth.currentUser!.displayName,
         profileImageUrl: _firebaseAuth.currentUser!.photoURL,
       );
@@ -62,7 +61,12 @@ class FirebaseAuthService implements IAuthService {
       }
     }
     if (_firebaseAuth.currentUser != null) {
-      userInfo = await currentUser;
+      userInfo = User(
+        id: _firebaseAuth.currentUser!.uid,
+        email: _firebaseAuth.currentUser!.email!,
+        name: _firebaseAuth.currentUser!.displayName,
+        profileImageUrl: _firebaseAuth.currentUser!.photoURL,
+      );
       controller.add(AuthenticationStatus.authenticated);
       return userInfo;
     } else {
@@ -81,7 +85,6 @@ class FirebaseAuthService implements IAuthService {
     }
     controller.add(AuthenticationStatus.unauthenticated);
     userInfo = null;
-    _user = null;
   }
 
   @override

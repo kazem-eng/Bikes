@@ -41,7 +41,6 @@ class DefaultTheme extends IAppThemeData {
         ),
       );
 
-  // card
   @override
   BoxDecoration get cardDecoration => BoxDecoration(
         color: colors.secondaryBackground,

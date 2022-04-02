@@ -2,8 +2,8 @@ import 'package:bikes/base/base.dart';
 import 'package:bikes/services/app_state/app_state.dart';
 import 'package:bikes/services/services.dart';
 
-class ApplicationService extends BaseViewModel<AppState> {
-  ApplicationService({
+class AppViewModel extends BaseViewModel<AppState> {
+  AppViewModel({
     required IAuthService authenticationService,
   })  : _authenticationService = authenticationService,
         super(

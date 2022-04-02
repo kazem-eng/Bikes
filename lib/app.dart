@@ -11,7 +11,7 @@ class App extends StatelessWidget {
   const App({
     required AppRouter appRouter,
     required IAppThemeData appThemeData,
-    required ApplicationService appService,
+    required AppViewModel appService,
     Key? key,
   })  : _appRouter = appRouter,
         _appThemeData = appThemeData,
@@ -20,7 +20,7 @@ class App extends StatelessWidget {
 
   final AppRouter _appRouter;
   final IAppThemeData _appThemeData;
-  final ApplicationService _appService;
+  final AppViewModel _appService;
 
   @override
   Widget build(BuildContext context) {
