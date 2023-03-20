@@ -27,12 +27,12 @@ class AppViewModel extends BaseViewModel<AppState> {
 
   final IAuthService _authenticationService;
 
-  void _handleAuthenticationController(event) {
-    var _event = event as AuthenticationStatus;
+  void _handleAuthenticationController(newEvent) {
+    var event = newEvent as AuthenticationStatus;
     emit(
       AppState.defaultState(
-        isAuthenticated: _event == AuthenticationStatus.authenticated,
-        isBusy: _event == AuthenticationStatus.busy,
+        isAuthenticated: event == AuthenticationStatus.authenticated,
+        isBusy: event == AuthenticationStatus.busy,
         userInfo: _authenticationService.userInfo,
       ),
     );

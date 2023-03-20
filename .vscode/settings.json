@@ -4,12 +4,12 @@
     "**/.packages": true,
     "**/.idea": true,
     "**/.metadata": true,
-    "android": true,
+    "android": false,
     "windows": true,
-    "gradle": true,
-    "**/*.gradle": true,
+    "gradle": false,
+    "**/*.gradle": false,
     "build": true,
-    "ios": true,
+    "ios": false,
     "pubspec.lock": true,
     "com.exto.app.iml": true,
     "README.md": false,
@@ -20,7 +20,8 @@
     "**/*.freezed.dart": true,
     "**/.flutter-plugins*": true,
     "debug.log": true,
-    "web": true
+    "web": false
   },
-  "liveshare.accessibility.soundsEnabled": false
+  "liveshare.accessibility.soundsEnabled": false,
+  "java.configuration.updateBuildConfiguration": "interactive"
 }

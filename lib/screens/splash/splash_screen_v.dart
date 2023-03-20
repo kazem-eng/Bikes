@@ -11,8 +11,8 @@ class SplashScreen extends BaseView<SplashScreenViewModel> {
 
   @override
   Widget build(BuildContext context) {
-    final _screenSize = MediaQuery.of(context).size;
-    final _logoWidth = _screenSize.width * .3;
+    final screenSize = MediaQuery.of(context).size;
+    final logoWidth = screenSize.width * .3;
 
     return BlocBuilder<SplashScreenViewModel, SplashScreenState>(
       bloc: viewModel..navigateToLogin(),
@@ -22,7 +22,7 @@ class SplashScreen extends BaseView<SplashScreenViewModel> {
             body: Center(
               child: Image.asset(
                 Resources.bikesLogo,
-                width: _logoWidth,
+                width: logoWidth,
               ),
             ),
           ),

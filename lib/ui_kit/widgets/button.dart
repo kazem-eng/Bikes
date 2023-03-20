@@ -7,6 +7,7 @@ enum ButtonType {
   button,
   icon,
 }
+
 enum ButtonStyleType {
   fill,
   outline,
@@ -188,11 +189,11 @@ class Button extends StatelessWidget {
     }
     return ElevatedButton(
       onPressed: onPressed,
+      style: _style ?? buttonStyle,
       child: _buttonChild(
         appTheme: appTheme,
         isDisabled: isDisabled,
       ),
-      style: _style ?? buttonStyle,
     );
   }
 
