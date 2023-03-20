@@ -66,9 +66,9 @@ class HeroAvatar extends StatelessWidget {
       height: _specifySize(),
       width: _specifySize(),
       child: CircleAvatar(
-        child: _builHeroText(appTheme),
         backgroundColor:
             _backgroundColor ?? appTheme.colors.disabledPrimaryBackground,
+        child: _builHeroText(appTheme),
       ),
     );
   }

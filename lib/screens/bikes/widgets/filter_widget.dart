@@ -24,7 +24,7 @@ class FilterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const _spacer = SizedBox(height: 20);
+    const spacer = SizedBox(height: 20);
     _initiateSizeAndCategories();
     return Padding(
       padding: const EdgeInsets.all(8),
@@ -38,7 +38,7 @@ class FilterWidget extends StatelessWidget {
           Wrap(
             children: [..._categoryChips],
           ),
-          _spacer,
+          spacer,
           const Label(
             Strings.priceSelection,
             typography: TypographyFamily.headline7,
@@ -53,7 +53,7 @@ class FilterWidget extends StatelessWidget {
               _onChange?.call(updateFilter);
             },
           ),
-          _spacer,
+          spacer,
           const Label(
             Strings.sizeSelection,
             typography: TypographyFamily.headline7,
@@ -61,7 +61,7 @@ class FilterWidget extends StatelessWidget {
           Wrap(
             children: [..._sizeChips],
           ),
-          _spacer,
+          spacer,
         ],
       ),
     );

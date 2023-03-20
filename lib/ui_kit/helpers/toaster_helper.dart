@@ -11,7 +11,7 @@ enum ToastType {
   error,
 }
 
-enum _toastActionType {
+enum ToastActionType {
   ok,
   cancel,
   submit,
@@ -42,9 +42,9 @@ class Toaster {
     double? width,
     List<ToastAction>? actions,
   }) {
-    final _appTheme = AppTheme.of(context).theme;
+    final appTheme = AppTheme.of(context).theme;
     final toastDecorationData = _getDecorationData(
-      appTheme: _appTheme,
+      appTheme: appTheme,
       toastType: toastType,
     );
     Future.delayed(
@@ -66,12 +66,12 @@ class Toaster {
                   : FlashBehavior.floating,
               position: position ?? FlashPosition.bottom,
               enableVerticalDrag: enableVerticalDismiss,
-              borderRadius: _appTheme.defaultBorderRadius,
+              borderRadius: appTheme.defaultBorderRadius,
               backgroundColor: toastDecorationData.backgroundColor,
               controller: controller,
               margin: const EdgeInsets.all(_toastMargin),
               child: _buildToastContent(
-                appTheme: _appTheme,
+                appTheme: appTheme,
                 controller: controller,
                 decorationData: toastDecorationData,
                 toastType: toastType,
@@ -330,7 +330,7 @@ class ToastAction {
     required Function()? onTap,
     ComponentStyle buttonType = ComponentStyle.primary,
   }) {
-    const type = _toastActionType.ok;
+    const type = ToastActionType.ok;
     return ToastAction(
       title: EnumHelpers.humanize(type),
       actionType: type,
@@ -343,7 +343,7 @@ class ToastAction {
     required Function()? onTap,
     ComponentStyle buttonType = ComponentStyle.secondary,
   }) {
-    const type = _toastActionType.cancel;
+    const type = ToastActionType.cancel;
     return ToastAction(
       title: EnumHelpers.humanize(type),
       actionType: type,
@@ -356,7 +356,7 @@ class ToastAction {
     required Function()? onTap,
     ComponentStyle buttonType = ComponentStyle.primary,
   }) {
-    const type = _toastActionType.submit;
+    const type = ToastActionType.submit;
     return ToastAction(
       title: EnumHelpers.humanize(type),
       actionType: type,
@@ -369,7 +369,7 @@ class ToastAction {
     required Function()? onTap,
     ComponentStyle buttonType = ComponentStyle.secondary,
   }) {
-    const type = _toastActionType.dismiss;
+    const type = ToastActionType.dismiss;
     return ToastAction(
       title: EnumHelpers.humanize(type),
       actionType: type,
@@ -379,7 +379,7 @@ class ToastAction {
   }
 
   final String title;
-  final _toastActionType actionType;
+  final ToastActionType actionType;
   final Function()? onTap;
   final ComponentStyle buttonType;
 }

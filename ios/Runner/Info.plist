@@ -34,14 +34,68 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>CLIENT_ID</key>
+	<string>726900179362-qv3co7klha151k9ovs35r39n54s0mduo.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.726900179362-qv3co7klha151k9ovs35r39n54s0mduo</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>726900179362-a4rcdscgivcbd165co757lrbcrvt0pnm.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAJoPijCqaWUT-GV33DEzr0ght7XNSeRVs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>726900179362</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>CFBundleVersion</key>
+	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>BUNDLE_ID</key>
+	<string>com.karendev.bikes</string>
+	<key>PROJECT_ID</key>
+	<string>bikes-9bece</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bikes-9bece.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:726900179362:ios:47d30141f559cdd8d9b2fb</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleURLTypes</key>
 	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.726900179362-qv3co7klha151k9ovs35r39n54s0mduo</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Bundle Id</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+			</array>
+		</dict>
 	</array>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
 </dict>
 </plist>

@@ -24,13 +24,13 @@ class NetworkCall extends INetworkService {
     late dynamic responseJson;
     try {
       final uri = Uri.parse('${Api.baseURL}${path ?? ''}');
-      final _response = await _client
+      final response = await _client
           .get(
             uri,
             headers: header ?? _header,
           )
           .timeout(_timeout);
-      responseJson = _returnResponse(_response);
+      responseJson = _returnResponse(response);
     } on SocketException {
       throw FetchDataException(message: Api.noConnection);
     } on FormatException {
